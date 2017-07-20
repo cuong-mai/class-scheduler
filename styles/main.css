@@ -1,0 +1,392 @@
+/*Page*/
+body {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 10pt;
+}
+
+.row-header {
+    height: 84px;
+    text-align: center;
+    padding-top: 8px;
+    background-color: #d35151;
+}
+
+.header-logo {
+    top: 0;
+    width: 48px;
+}
+
+.header-text {
+    display: inline-table;
+    text-align: center;
+    margin-left: 32px;
+}
+
+.header-text p {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: white;
+}
+
+.header-title {
+    font-size: 22pt;
+    font-weight: lighter;
+    color: white;
+}
+
+.header-background {
+    position: absolute;
+    top: -32px;
+    right: 0px;
+    
+}
+
+.row-content {
+    margin-top: 24px;
+}
+
+/*Left Panel*/
+.row-left-panel {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.row-of-left-panel {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.row-course-heading {
+/*    margin-top: 16px;*/
+}
+
+.row-button-left-panel {
+    padding-right: 16px;
+    text-align: center;
+}
+
+.row-label {
+    height: 24px;
+}
+
+.row-break {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    height: 2px;
+    background-color: #cccccc;
+}
+
+.row-add-course {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.col-of-left-panel {
+    padding-left: 8px;
+    padding-right: 0px;
+}
+
+.button-import {
+    width: 100%;
+    height: 32px;
+    border: 0;
+    background: #3fa246;
+    color: white;
+    font-size: 10pt;
+}
+
+.button-delete {
+    position: absolute;
+    right: 0px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    background-image: url("/images/delete.png");
+}
+
+.button-delete:hover {
+    background-image: url("/images/delete_hover.png");
+    cursor: pointer;
+}
+
+.row-course-container {
+    overflow-y: auto;
+    height: calc(90vh - 200px);
+    margin-top: 16px;
+    margin-bottom: 16px;
+    padding-right: 16px;
+}
+
+#left-panel label {
+    margin-bottom: 0px;
+    font-size: 8pt;
+    font-weight: normal;
+}
+
+#left-panel .label-course {
+    font-size: 9pt;
+/*    font-weight: bold;*/
+}
+
+input, select {
+    text-align: center;
+    font-size: 8pt;
+}
+
+.input-large {
+    width: 100%;
+    height: 24px;
+}
+
+input[type="checkbox"] {
+    position: relative;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+input[type="time"]::-webkit-outer-spin-button,
+input[type="time"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="time"] {
+    -moz-appearance: textfield;
+}
+
+#button-add-course {
+    background-image: url("/images/add_course.png");
+    width: 24px;
+}
+
+#button-add-course:hover {
+    cursor: pointer;
+}
+
+.button-generate {
+    width: 100%;
+    height: 32px;
+    border: 0;
+    background: #d35151;
+    color: white;
+    font-size: 10pt;
+}
+
+.button-reset {
+    width: 40%;
+    height: 32px;
+    border: 0;
+    background: #ffffff;
+    color: #d3d0d0
+    font-size: 10pt;
+}
+
+/*---------------------------------------------------*/
+/*Right Panel*/
+
+.height-100-percent {
+    height: 100%;
+}
+
+.row-right-panel {
+    padding-left: 0px;
+    padding-right: 32px;
+}
+
+.header-banner-right-panel {
+    height: 32px;
+    padding-top: 6px;
+    background-color: #d3d0d0;
+}
+
+.header-title-right-panel {
+    font-size: 10pt;
+}
+
+.col-sort-by {
+    text-align: right
+}
+
+.select-sort-by {
+    width: 256px;
+    font-size: 9.5pt;
+}
+
+.row-schedule-container {
+    overflow-y: auto;
+    margin-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: calc(90vh - 150px);
+}
+
+.row-schedule {
+    margin-left: 8px;
+    margin-right: 8px;
+    border: solid 1px #dddddd;
+    box-shadow: 2px 2px 2px #dddddd;
+}
+
+.row-schedule-overview {
+    padding: 8px;
+    height: 98%;
+}
+
+.row-schedule-result {
+    margin-bottom: 42px;
+    padding: 8px;
+    height: 320px;
+}
+
+.col-schedule-number {
+    font-size: 12pt;    
+}
+
+.col-button-view {
+    text-align: center;    
+}
+
+.col-button-view div {
+    position: absolute;
+    bottom: 0;
+}
+
+.button-view, .button-export {
+    margin-top: 8px; 
+    width: 80%;
+    height: 32px;
+    border: 0;
+    background: #d3d0d0;
+    color: white;
+    font-size: 8pt;
+}
+
+.row-label-schedule-day, .col-label-schedule-time {
+    position: absolute;
+}
+
+.label-schedule-day {
+    position: absolute;
+    text-align: center;
+}
+
+.label-schedule-time {
+    position: absolute;
+    text-align: right;
+}
+
+.display-schedule {
+    position: absolute;
+}
+
+.table-schedule {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+td {
+    border-collapse: collapse;
+    border: solid 1px #eeeeee;
+    text-align: center;
+}
+
+.class {
+    overflow: hidden;
+    position: absolute;
+    padding-top: 0.05%;
+    text-align: center;
+    line-height: 1em;
+    border: none;
+}
+
+.section:hover * {
+    cursor: pointer;
+    filter: brightness(130%);
+}
+
+.label-class {
+/*    line-height: 5%;*/
+    height: 10%;
+    font-weight: normal;
+    font-size: 8pt;
+    color: white;
+}
+
+/* Loading Spinner */
+.spinner-wrapper {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+}
+
+.spinner-wrapper p {
+    color: grey;
+    font-size: 12pt;
+}
+
+.spinner {
+    display: block;
+    left: 25%;
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+}
+.spinner:after, .spinner:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.spinner-4:before, .spinner-4:after {
+    position: absolute;
+    background: #d35151;
+    -webkit-animation: pulse 3s linear infinite;
+    animation: pulse 3s linear infinite;
+    opacity: 0;
+}
+.spinner-4:after {
+    -webkit-animation: pulse 2s linear 2.3s infinite;
+    animation: pulse 2s linear 2.3s infinite;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(1.3);
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}

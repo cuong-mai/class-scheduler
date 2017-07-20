@@ -1,0 +1,53 @@
+{
+    "termList": [
+        {
+            "code": "S17",
+            "name": "Summer 2017",
+            "courseList": [
+                {
+                    "code": "OOP244",
+                    "sectionList": [
+                        {
+                            "code": "SAB",
+                            "teacher": "Chris",
+                            "dayList": [
+                                {
+                                    "dayOfWeek": "Tuesday",
+                                    "startTime": "09:50",
+                                    "endTime": "11:35"
+                                },
+                                {
+                                    "dayOfWeek": "Thursday",
+                                    "startTime": "13:30",
+                                    "endTime": "15:15"
+                                }
+                            ],
+                            "color": "#234567"
+                        },
+                        {
+                            "code": "SCC",
+                            "teacher": "John",
+                            "dayList": [
+                                {
+                                    "dayOfWeek": "Wednesday",
+                                    "startTime": "09:00",
+                                    "endTime": "10:45"
+                                },
+                                {
+                                    "dayOfWeek": "Friday",
+                                    "startTime": "13:30",
+                                    "endTime": "15:15"
+                                }
+                            ],
+                            "color": "#ff982a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "F17",
+            "name": "Fall 2017"
+        }
+    ]
+}
