@@ -23,6 +23,12 @@ var LABEL_SCHEDULE_TIME_HEIGHT = 5;
 // Font size (pt)
 var LABEL_SCHEDULE_FONT_SIZE = 8;
 
+var ENABLE_WITH_EXTRA_VISUAL = true;
+var ENABLE_WITHOUT_EXTRA_VISUAL = false;
+
+var ENABLE_BY_CLICK = true;
+var ENABLE_NOT_BY_CLICK = false;
+
 // Unique Properties of Schedule Overview (0) /Result (1)
 function scheduleProperty(scheduleIndex_) {
     var HOUR_STEP;
@@ -217,38 +223,106 @@ function deepCopySectionList(sectionList_) {
     return sectionListTmp;
 }
 
+function parentCourse(courseList_, section_) {
+    var courseIndexFound = -1;
+    var result;
+    var courseCount = courseList_.length;
+    
+    for (var i = 0; i < courseCount; i++) {
+        var currentCourse = courseList_[i];
+        var sectionCount = currentCourse.sectionList.length;
+        for (var j = 0; j < sectionCount; j++) {
+            var currentSection = currentCourse.sectionList[j];
+            if (currentSection == section_) {
+                courseIndexFound = i;
+                result = courseList_[courseIndexFound];
+                break;
+            }
+        }
+        if (courseIndexFound > -1) {
+            break;
+        }
+    }
+    return result;
+}
+
+function countSectionEnable(sectionList_) {
+    var sectionCount = sectionList_.length;
+    var count = 0;
+    for (var i = 0; i < sectionCount; i++) {
+        if (sectionList_[i].isEnable) {
+            count++;
+        }
+    }
+    return count;
+}
+
+function toggleEnable() {
+    var clickedSection = this;
+    var parent = parentCourse(gCourseList, clickedSection);
+    var sectionList = parent.sectionList;
+    var sectionCount = sectionList.length;
+    var sectionEnableCount  = countSectionEnable(sectionList);
+    if (sectionEnableCount == sectionCount) {
+        if (clickedSection.isEnableByClick) {
+            clickedSection.disable();
+        } else {
+            for (var i = 0; i < sectionCount; i++) {
+                sectionList[i].disable();
+                clickedSection.enable(ENABLE_WITH_EXTRA_VISUAL, ENABLE_BY_CLICK);
+            }
+        }
+    } else {
+        if (clickedSection.isEnable) {
+            clickedSection.disable();
+            if (countSectionEnable(sectionList) == 0) {
+                for (var i = 0; i < sectionCount; i++) {
+                    sectionList[i].enable(ENABLE_WITHOUT_EXTRA_VISUAL, ENABLE_NOT_BY_CLICK);
+                }
+            }
+        } else {
+            clickedSection.enable(ENABLE_WITH_EXTRA_VISUAL, ENABLE_BY_CLICK);
+        }
+    }
+    console.log(countSectionEnable(sectionList));
+}
+
 function combineSections(courseList_) {
     var sectionCombList = new Array();
-    
+
     for (var i = 0; i < courseList_[0].sectionList.length; i++) {
         sectionCombList[i] = new Array();
         sectionCombList[i].push(courseList_[0].sectionList[i]);
     }
-    
+
     var courseCount = courseList_.length;
     for (var courseIndex = 0; courseIndex < courseCount - 1; courseIndex++) {
         var currentCourse = courseList_[courseIndex];
         var currentCourseSectionCount = currentCourse.sectionList.length;
-        
+
         var nextCourse = courseList_[courseIndex + 1];
         var nextCourseSectionCount = nextCourse.sectionList.length;
-        
+
         for (var currentCourseSectionIndex = 0; currentCourseSectionIndex < currentCourseSectionCount; currentCourseSectionIndex++) {
             var currentCourseCurrentSection = currentCourse.sectionList[currentCourseSectionIndex];
-            for (var nextCourseSectionIndex = 0; nextCourseSectionIndex < nextCourseSectionCount; nextCourseSectionIndex++) {
-                var nextCourseCurrentSection = nextCourse.sectionList[nextCourseSectionIndex];
-                for (var sectionCombIndex = 0; sectionCombIndex < sectionCombList.length; sectionCombIndex++) {
-                    if (sectionCombList[sectionCombIndex].indexOf(currentCourseCurrentSection) >= 0 &&
-                        sectionCombList[sectionCombIndex].length == (courseIndex + 1)) {
-                        if (!isSectionListOverlapping(sectionCombList[sectionCombIndex], nextCourseCurrentSection)) {
-                            sectionCombList.push(appendToNewArray(sectionCombList[sectionCombIndex], nextCourseCurrentSection));
+            if (currentCourseCurrentSection.isEnable) {
+                for (var nextCourseSectionIndex = 0; nextCourseSectionIndex < nextCourseSectionCount; nextCourseSectionIndex++) {
+                    var nextCourseCurrentSection = nextCourse.sectionList[nextCourseSectionIndex];
+                    if (nextCourseCurrentSection.isEnable) {
+                        for (var sectionCombIndex = 0; sectionCombIndex < sectionCombList.length; sectionCombIndex++) {
+                            if (sectionCombList[sectionCombIndex].indexOf(currentCourseCurrentSection) >= 0 &&
+                                sectionCombList[sectionCombIndex].length == (courseIndex + 1)) {
+                                if (!isSectionListOverlapping(sectionCombList[sectionCombIndex], nextCourseCurrentSection)) {
+                                    sectionCombList.push(appendToNewArray(sectionCombList[sectionCombIndex], nextCourseCurrentSection));
+                                }
+                            }
                         }
                     }
                 }
             }
         }
     }
-    
+
     var validSectionCombList = new Array();
     for (var i = 0; i < sectionCombList.length; i++) {
         if (sectionCombList[i].length == courseCount) {
@@ -257,6 +331,3 @@ function combineSections(courseList_) {
     }
     return validSectionCombList;
 }
-
-
-

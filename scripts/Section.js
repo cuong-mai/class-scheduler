@@ -2,6 +2,8 @@ class Section {
     constructor(courseCode_, sectionData_,) {
         this.courseCode = courseCode_;
         this.sectionData = sectionData_;
+        this.isEnable = true;
+        this.isEnableByClick = false;
 //        this.scheduleIndex = scheduleIndex_;
         this.classList = [];
         this.$viewElement = $($.parseHTML('<div class="section"></div>'));
@@ -59,20 +61,36 @@ class Section {
         this.classList.push(newClass_);
         this.$controlElement.children().first().append(newClass_.$controlElement);
         this.$viewElement.append(newClass_.$viewElement);
-    
-//        this.$viewElement.unbind();
-//        this.$viewElement.bind("mouseenter", function () {
-//            var color = newClass_.color;
-//            var hoverColor = toString(Number(color) + Number("#333333"));
-//            alert(color.slice(1, 7) + 333);
-//            $(this).children().css({
-//                "cursor": "pointer",
-//                "background-color": "red"    
-//            });
-//        });
+        
+        var thisSection = this;
+        
+        this.$viewElement.unbind();
+        this.$viewElement.bind("click", function () {
+            toggleEnable.call(thisSection);
+        });
     }
     
-    toggleSelection(section_) {
-        console.log(section_);
+    enable(withExtraVisual_, byClick_) {
+        this.isEnable = true;
+        this.$viewElement.children().css({
+            "filter": "opacity(100%)"
+        });            
+        if (withExtraVisual_) {
+            this.$viewElement.children().css({
+                "border": "2px solid #992222",
+            });            
+        }
+        if (byClick_) {
+            this.isEnableByClick = true;
+        }
+    }
+    
+    disable() {
+        this.isEnable = false;
+        this.isEnableByClick = false;
+        this.$viewElement.children().css({
+            "border": "none",
+            "filter": "opacity(40%)"
+        });
     }
 } // End of Class Section

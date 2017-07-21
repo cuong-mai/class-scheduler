@@ -10,7 +10,7 @@ $(document).ready(function () {
     init();
     assignEvents();
     
-//    importData(); 
+    importData(); 
 });
 
 function init() {
