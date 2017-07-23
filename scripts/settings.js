@@ -225,7 +225,7 @@ function deepCopySectionList(sectionList_) {
 
 function parentCourse(courseList_, section_) {
     var courseIndexFound = -1;
-    var result;
+    var result = null;
     var courseCount = courseList_.length;
     
     for (var i = 0; i < courseCount; i++) {
@@ -257,34 +257,59 @@ function countSectionEnable(sectionList_) {
     return count;
 }
 
-function toggleEnable() {
+function toggleEnableSection() {
     var clickedSection = this;
-    var parent = parentCourse(gCourseList, clickedSection);
-    var sectionList = parent.sectionList;
-    var sectionCount = sectionList.length;
-    var sectionEnableCount  = countSectionEnable(sectionList);
-    if (sectionEnableCount == sectionCount) {
-        if (clickedSection.isEnableByClick) {
-            clickedSection.disable();
-        } else {
-            for (var i = 0; i < sectionCount; i++) {
-                sectionList[i].disable();
-                clickedSection.enable(ENABLE_WITH_EXTRA_VISUAL, ENABLE_BY_CLICK);
-            }
-        }
+    if (!clickedSection.isOpen) {
+        clickedSection.open();
+//        clickedSection.enable();
     } else {
-        if (clickedSection.isEnable) {
-            clickedSection.disable();
-            if (countSectionEnable(sectionList) == 0) {
-                for (var i = 0; i < sectionCount; i++) {
-                    sectionList[i].enable(ENABLE_WITHOUT_EXTRA_VISUAL, ENABLE_NOT_BY_CLICK);
+        clickedSection.close();
+//        clickedSection.disable();
+    }
+}
+
+function parentSection(courseList_, class_) {
+    var sectionIndexFound = -1;
+    var result = null;
+    for (var i = 0; i < courseList_.length; i++) {
+        var currentCourse = courseList_[i];
+        for (var j = 0; j < currentCourse.sectionList.length; j++) {
+            var currentSection = currentCourse.sectionList[j];
+            for (var k = 0; k < currentSection.classList.length; k++) {
+                var currentClass = currentSection.classList[k];
+                if (currentClass == class_) {
+                    sectionIndexFound = j;
+                    result = currentSection;
+                    break;
                 }
             }
-        } else {
-            clickedSection.enable(ENABLE_WITH_EXTRA_VISUAL, ENABLE_BY_CLICK);
+            if (sectionIndexFound > -1) {
+                break;
+            }
+        }
+        if (sectionIndexFound > -1) {
+            break;
         }
     }
-    console.log(countSectionEnable(sectionList));
+    return result;
+}
+
+function toggleEnableDay() {
+    var objectPassed = this;
+    var $changedCheckbox = objectPassed.$checkbox;
+    var schedule = objectPassed.schedule;
+    var dayOfWeek = objectPassed.dayOfweek;
+    if ($changedCheckbox.prop("checked")) {
+        for (var i = 0; i < schedule.classList[dayOfWeek].length; i++) {
+            var currentClass = schedule.classList[dayOfWeek][i];
+            parentSection(gCourseList, currentClass).enable();
+        }
+    } else {
+        for (var i = 0; i < schedule.classList[dayOfWeek].length; i++) {
+            var currentClass = schedule.classList[dayOfWeek][i];
+            parentSection(gCourseList, currentClass).disable();
+        }
+    }
 }
 
 function combineSections(courseList_) {
@@ -305,10 +330,10 @@ function combineSections(courseList_) {
 
         for (var currentCourseSectionIndex = 0; currentCourseSectionIndex < currentCourseSectionCount; currentCourseSectionIndex++) {
             var currentCourseCurrentSection = currentCourse.sectionList[currentCourseSectionIndex];
-            if (currentCourseCurrentSection.isEnable) {
+            if (currentCourseCurrentSection.isOpen && currentCourseCurrentSection.isEnable) {
                 for (var nextCourseSectionIndex = 0; nextCourseSectionIndex < nextCourseSectionCount; nextCourseSectionIndex++) {
                     var nextCourseCurrentSection = nextCourse.sectionList[nextCourseSectionIndex];
-                    if (nextCourseCurrentSection.isEnable) {
+                    if (nextCourseCurrentSection.isOpen && nextCourseCurrentSection.isEnable) {
                         for (var sectionCombIndex = 0; sectionCombIndex < sectionCombList.length; sectionCombIndex++) {
                             if (sectionCombList[sectionCombIndex].indexOf(currentCourseCurrentSection) >= 0 &&
                                 sectionCombList[sectionCombIndex].length == (courseIndex + 1)) {

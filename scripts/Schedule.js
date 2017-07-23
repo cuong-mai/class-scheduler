@@ -41,9 +41,21 @@ class Schedule {
         var $rowLabelScheduleDayElem = $scheduleElem.find(".row-label-schedule-day");
         for (var i = 0; i < NUM_DAYS_PER_WEEK; i++) {
             var $labelScheduleDayElem = $($.parseHTML(
-                '<div class="label-schedule-day">' + DAYS_OF_WEEK[i] + '</div>'
+                '<div class="label-schedule-day">' +
+                    '<span>' + DAYS_OF_WEEK[i] + '</span>' +
+                '<input type="checkbox" class="checkbox-schedule-day-' + DAYS_OF_WEEK[i] + '" checked>' +
+                '</div>'
             ));
             $rowLabelScheduleDayElem.append($labelScheduleDayElem);
+            
+            var thisSchedule = this;
+            var objectPassed = {schedule: thisSchedule, dayOfweek: null, $checkbox: null};
+            $labelScheduleDayElem.children("input").unbind();
+            $labelScheduleDayElem.children("input").bind("click", function () {
+                objectPassed.dayOfweek = $(this).prop("class").split("-")[3];
+                objectPassed.$checkbox = $(this);
+                toggleEnableDay.call(objectPassed);
+            });
         }
         
         // Add column and labels time
@@ -138,6 +150,14 @@ class Schedule {
             "height": (100 - TABLE_SCHEDULE_TOP) + "%",
             "width": (100 - TABLE_SCHEDULE_LEFT) + "%"
         });
+    }
+    
+    show() {
+        this.$scheduleElem.show();
+    }
+    
+    hide() {
+        this.$scheduleElem.hide();
     }
     
     appendCourse(newCourse_) {

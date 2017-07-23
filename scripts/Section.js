@@ -2,8 +2,8 @@ class Section {
     constructor(courseCode_, sectionData_,) {
         this.courseCode = courseCode_;
         this.sectionData = sectionData_;
+        this.isOpen = true;
         this.isEnable = true;
-        this.isEnableByClick = false;
 //        this.scheduleIndex = scheduleIndex_;
         this.classList = [];
         this.$viewElement = $($.parseHTML('<div class="section"></div>'));
@@ -66,30 +66,46 @@ class Section {
         
         this.$viewElement.unbind();
         this.$viewElement.bind("click", function () {
-            toggleEnable.call(thisSection);
+            toggleEnableSection.call(thisSection);
         });
     }
     
-    enable(withExtraVisual_, byClick_) {
-        this.isEnable = true;
-        this.$viewElement.children().css({
-            "filter": "opacity(100%)"
-        });            
-        if (withExtraVisual_) {
+    open() {
+        this.isOpen = true;
+        if (this.isOpen && this.isEnable) {
             this.$viewElement.children().css({
-                "border": "2px solid #992222",
+                "filter": "opacity(100%)"
             });            
         }
-        if (byClick_) {
-            this.isEnableByClick = true;
+        for (var i = 0; i < this.classList.length; i++) {
+            var currentClass = this.classList[i];
+            currentClass.open();
+        }
+    }
+
+    close() {
+        this.isOpen = false;
+        this.$viewElement.children().css({
+            "filter": "opacity(40%)"
+        });
+        for (var i = 0; i < this.classList.length; i++) {
+            var currentClass = this.classList[i];
+            currentClass.close();
+        }
+    }
+    
+    enable() {
+        this.isEnable = true;
+        if (this.isOpen && this.isEnable) {
+            this.$viewElement.children().css({
+                "filter": "opacity(100%)"
+            });            
         }
     }
     
     disable() {
         this.isEnable = false;
-        this.isEnableByClick = false;
         this.$viewElement.children().css({
-            "border": "none",
             "filter": "opacity(40%)"
         });
     }

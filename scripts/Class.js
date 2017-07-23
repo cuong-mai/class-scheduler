@@ -15,6 +15,10 @@ class Class {
                 '<br>' +
                 '<label class="label-class label-class-hideable">' + time24ToAP(this.classData.startTime) + '-</label>' +
                 '<label class="label-class label-class-hideable">' + time24ToAP(this.classData.endTime) + '</label>' +
+                '<div class="class-status">' +
+                    '<label class="label-class-status">Open</label>' +
+                    '<div class="sign-class-status"></div>' +
+                '</div>' +
             '</div>'
         ));
         
@@ -25,7 +29,7 @@ class Class {
         var endTime = this.classData.endTime;
 
         this.$controlElement = $($.parseHTML(
-            '<div id="class-' + courseIndex + '-' + sectionIndex + '-' + classIndex + '" class="row row-of-left-panel">' +
+            '<div id="class-' + courseIndex + '-' + sectionIndex + '-' + classIndex + '" class="row row-of-left-panel" title="AAA">' +
                 '<div class="col-sm-3 col-of-left-panel">' +
                     '<div class="row-label">' +
                         '<input type="checkbox" checked>' +
@@ -69,11 +73,23 @@ class Class {
             "height": position.height + "%",
             "width": position.width + "%",
              "background-color": this.color
-//            "border": "2px solid " + this.color
         });
-        this.$viewElement.find(".label-class-hideable").css({
-//            "display": scheduleProperty(this.scheduleIndex).LABEL_CLASS_HIDEABLE_CSS_DISPLAY    
-//            "display": "none"
+        this.$viewElement.find(".class-status").css({
+            "background-color": this.color    
+        });
+    }
+    
+    open() {
+        this.$viewElement.find(".label-class-status").text("Open");
+        this.$viewElement.find(".sign-class-status").css({
+            "background-color": "lightgreen"    
+        });
+    }
+
+    close() {
+        this.$viewElement.find(".label-class-status").text("Closed");
+        this.$viewElement.find(".sign-class-status").css({
+            "background-color": "red"    
         });
     }
 }

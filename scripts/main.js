@@ -1,7 +1,7 @@
 // Global Variables
 var gCourseContainer;
 var gScheduleOverview;
-var gScheduleResult = new Array();
+var gScheduleResultList = new Array();
 var gCurrentTermData;
 var gCourseList = [];
 var gSectionCombList = new Array();
@@ -22,6 +22,12 @@ function init() {
 function assignEvents() {
     $("#button-import").click(importData);
     $("#button-generate").click(generateSchedules);
+    $(".button-navigation-schedule-back").click(function () {
+        navigateSchedule("back");
+    });
+    $(".button-navigation-schedule-forward").click(function () {
+        navigateSchedule("forward");
+    });
 }
 
 function test8() {
