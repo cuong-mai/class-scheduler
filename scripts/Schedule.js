@@ -81,7 +81,7 @@ class Schedule {
         
         // Append Element to parent
         this.$scheduleElem = $scheduleElem;
-        $("#row-schedule-container").children().first().append(this.$scheduleElem);
+//        $("#row-schedule-container").children().first().append(this.$scheduleElem);
         
         // Update View
         this.updateView();

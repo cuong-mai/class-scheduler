@@ -9,20 +9,22 @@ function importData() {
 }
 
 function generateSchedules() {
-    gScheduleOverview.$scheduleElem.fadeOut(200, function () {
-        $(".spinner-wrapper").fadeIn(200, function () {
-            gSectionCombList = combineSections(gCourseList);
-            for (var i = 0; i < gSectionCombList.length; i++) {
-                gScheduleResultList[i] = new Schedule(i + 1);
-                var sectionList = gSectionCombList[i];
-                for (var j = 0; j < sectionList.length; j++) {
-                    gScheduleResultList[i].appendSection(sectionList[j]);
-                }
+//    gRightPanel.hideSchedulePage(gSchedulePageOverview);
+    gSchedulePageResult = new SchedulePage();
+    
+    $(".spinner-wrapper").fadeIn(200, function () {
+        gSectionCombList = combineSections(gCourseList);
+        for (var i = 0; i < gSectionCombList.length; i++) {
+            gScheduleResultList[i] = new Schedule(i + 1);
+            var sectionList = gSectionCombList[i];
+            for (var j = 0; j < sectionList.length; j++) {
+                gScheduleResultList[i].appendSection(sectionList[j]);
             }
-            $(".spinner-wrapper").fadeOut(200);
-            $(".button-navigation-schedule-back").prop("src", "images/button_schedule_back_enabled.png");
-        });
-    });    
+            gSchedulePageResult.appendSchedule(gScheduleResultList[i]);
+        }
+        gRightPanel.appendSchedulePage(gSchedulePageResult);
+        $(".spinner-wrapper").fadeOut(200);
+    });
 }
 
 function navigateSchedule(direction_) {

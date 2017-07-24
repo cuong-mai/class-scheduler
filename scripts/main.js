@@ -1,5 +1,8 @@
 // Global Variables
 var gCourseContainer;
+var gRightPanel;
+var gSchedulePageOverview;
+var gSchedulePageResult;
 var gScheduleOverview;
 var gScheduleResultList = new Array();
 var gCurrentTermData;
@@ -14,20 +17,27 @@ $(document).ready(function () {
 });
 
 function init() {
+    gRightPanel = new RightPanel();
+    gSchedulePageOverview = new SchedulePage();
+    gRightPanel.appendSchedulePage(gSchedulePageOverview);
+    
     gScheduleOverview = new Schedule(0);
-    gCourseContainer = new CourseContainer;
+    gSchedulePageOverview.appendSchedule(gScheduleOverview);
+    
+    gCourseContainer = new CourseContainer();
+    
     gCurrentTermData = data.termList[0];
 }
 
 function assignEvents() {
     $("#button-import").click(importData);
     $("#button-generate").click(generateSchedules);
-    $(".button-navigation-schedule-back").click(function () {
-        navigateSchedule("back");
-    });
-    $(".button-navigation-schedule-forward").click(function () {
-        navigateSchedule("forward");
-    });
+//    $(".button-navigation-schedule-back").click(function () {
+//        navigateSchedule("back");
+//    });
+//    $(".button-navigation-schedule-forward").click(function () {
+//        navigateSchedule("forward");
+//    });
 }
 
 function test8() {
