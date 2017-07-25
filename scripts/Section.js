@@ -1,10 +1,10 @@
 class Section {
-    constructor(courseCode_, sectionData_,) {
+    constructor(courseCode_, sectionData_) {
         this.courseCode = courseCode_;
         this.sectionData = sectionData_;
+        this.scheduleType = "";
         this.isOpen = true;
         this.isEnable = true;
-//        this.scheduleIndex = scheduleIndex_;
         this.classList = [];
         this.$viewElement = $($.parseHTML('<div class="section"></div>'));
 
@@ -58,12 +58,12 @@ class Section {
     }
     
     appendClass(newClass_) {
+        newClass_.scheduleType = this.scheduleType;
         this.classList.push(newClass_);
         this.$controlElement.children().first().append(newClass_.$controlElement);
         this.$viewElement.append(newClass_.$viewElement);
         
         var thisSection = this;
-        
         this.$viewElement.unbind();
         this.$viewElement.bind("click", function () {
             toggleEnableSection.call(thisSection);

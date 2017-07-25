@@ -1,7 +1,7 @@
 class Course {
     constructor(courseData_) {
         this.courseData = courseData_;
-//        this.scheduleIndex = scheduleIndex_;
+        this.scheduleType = "";
         this.sectionList = [];
         this.activeSectionIndex = null;
         this.$viewElement = $($.parseHTML('<div class="course"></div>'));
@@ -35,6 +35,7 @@ class Course {
     }
     
     appendSection(newSection_) {
+        newSection_.scheduleType = this.scheduleType;
         this.sectionList.push(newSection_);
         this.$controlElement.children().first().append(newSection_.$controlElement);
         this.$viewElement.append(newSection_.$viewElement);

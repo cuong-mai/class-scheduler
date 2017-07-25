@@ -1,8 +1,9 @@
 // Schedule class
 
 class Schedule {
-    constructor(scheduleIndex_) {
-        this.scheduleIndex = scheduleIndex_;
+    constructor(scheduleType_, dayDisabledList_) {
+        this.scheduleType = scheduleType_;
+        this.daysDisableList = dayDisabledList_;
         this.courseList = [];
         this.sectionList = [];
         this.classList = new Array();
@@ -11,12 +12,12 @@ class Schedule {
         }
         
         // Schedule Element
-        var scheduleId = scheduleProperty(this.scheduleIndex).SCHEDULE_ID_PREFIX;
-        var scheduleClass = scheduleProperty(this.scheduleIndex).SCHEDULE_CLASS; 
-        var colClass = (this.scheduleIndex == SCHDEDULE_OVERVIEW_INDEX ? 12 : 10);
-        var $scheduleElem = $($.parseHTML(
+        var scheduleId = scheduleProperty(this.scheduleType).SCHEDULE_ID_PREFIX;
+        var scheduleClass = scheduleProperty(this.scheduleType).SCHEDULE_CLASS; 
+        var colClass = (this.scheduleType == SCHEDULE_OVERVIEW_TYPE ? 12 : 10);
+        var $viewElement = $($.parseHTML(
             '<div id="row-schedule-' + scheduleId + '" class="row row-schedule row-schedule-' + scheduleClass + '">' +
-                '<div class="col-sm-1 height-100-percent col-schedule-number">'+ this.scheduleIndex + '</div>' + 
+                '<div class="col-sm-1 height-100-percent col-schedule-number">'+ "." + '</div>' + 
                 '<div class="col-sm-' + colClass + ' height-100-percent">' +    
                     '<div class="row height-100-percent">' +
                         '<div class="col-sm-12 height-100-percent">' + 
@@ -38,12 +39,12 @@ class Schedule {
         )); 
         
         // Add row and labels day
-        var $rowLabelScheduleDayElem = $scheduleElem.find(".row-label-schedule-day");
+        var $rowLabelScheduleDayElem = $viewElement.find(".row-label-schedule-day");
         for (var i = 0; i < NUM_DAYS_PER_WEEK; i++) {
             var $labelScheduleDayElem = $($.parseHTML(
                 '<div class="label-schedule-day">' +
                     '<span>' + DAYS_OF_WEEK[i] + '</span>' +
-                '<input type="checkbox" class="checkbox-schedule-day-' + DAYS_OF_WEEK[i] + '" checked>' +
+                    '<input type="checkbox" class="checkbox-schedule-day checkbox-schedule-day-' + DAYS_OF_WEEK[i] + '" checked>' +
                 '</div>'
             ));
             $rowLabelScheduleDayElem.append($labelScheduleDayElem);
@@ -52,16 +53,16 @@ class Schedule {
             var objectPassed = {schedule: thisSchedule, dayOfweek: null, $checkbox: null};
             $labelScheduleDayElem.children("input").unbind();
             $labelScheduleDayElem.children("input").bind("click", function () {
-                objectPassed.dayOfweek = $(this).prop("class").split("-")[3];
+                objectPassed.dayOfweek = $(this).prop("class").split("-")[5];
                 objectPassed.$checkbox = $(this);
                 toggleEnableDay.call(objectPassed);
             });
         }
         
         // Add column and labels time
-        var $colLabelScheduleTimeElem = $scheduleElem.find(".col-label-schedule-time");
+        var $colLabelScheduleTimeElem = $viewElement.find(".col-label-schedule-time");
         var timeArray = toTimeArray(MIN_TIME, MAX_TIME);
-        for (var i = 0; i < scheduleProperty(this.scheduleIndex).NUM_LABELS_SCHEDULE_TIME; i++) {
+        for (var i = 0; i < scheduleProperty(this.scheduleType).NUM_LABELS_SCHEDULE_TIME; i++) {
             var $labelScheduleTimeElem = $($.parseHTML(
                 '<div class="label-schedule-time">' + timeArray[i] + '</div>'
             ));
@@ -69,8 +70,8 @@ class Schedule {
         }
 
         // Add row and columns of Table Schedule
-        var $tableScheduleElem = $scheduleElem.find(".table-schedule");
-        for (var row = 0; row < scheduleProperty(this.scheduleIndex).NUM_TABLE_SCHEDULE_ROWS; row++) {
+        var $tableScheduleElem = $viewElement.find(".table-schedule");
+        for (var row = 0; row < scheduleProperty(this.scheduleType).NUM_TABLE_SCHEDULE_ROWS; row++) {
             var $rowElem = $($.parseHTML('<tr></tr>'));
             for (var cell = 0; cell < NUM_DAYS_PER_WEEK; cell++) {
                 var $cellElem = $($.parseHTML('<td></td>'));
@@ -80,8 +81,8 @@ class Schedule {
         }
         
         // Append Element to parent
-        this.$scheduleElem = $scheduleElem;
-//        $("#row-schedule-container").children().first().append(this.$scheduleElem);
+        this.$viewElement = $viewElement;
+//        $("#row-schedule-container").children().first().append(this.$viewElement);
         
         // Update View
         this.updateView();
@@ -89,19 +90,19 @@ class Schedule {
     
     updateView() {
         // Column Schedule Number and Column Button View
-        if (this.scheduleIndex == SCHDEDULE_OVERVIEW_INDEX) {
-            var $colScheduleNumber = this.$scheduleElem.find(".col-schedule-number");
+        if (this.scheduleType == SCHEDULE_OVERVIEW_TYPE) {
+            var $colScheduleNumber = this.$viewElement.find(".col-schedule-number");
             $colScheduleNumber.css({
                 "display": "none"
             });
-            var $colButtonView = this.$scheduleElem.find(".col-button-view");
+            var $colButtonView = this.$viewElement.find(".col-button-view");
             $colButtonView.css({
                 "display": "none"
             });
         }
         
         // Row Label Day
-        var $rowLabelDayElem = this.$scheduleElem.find(".row-label-schedule-day");
+        var $rowLabelDayElem = this.$viewElement.find(".row-label-schedule-day");
         $rowLabelDayElem.css({
             "top": 0 + "%",
             "left": TABLE_SCHEDULE_LEFT + "%",
@@ -111,7 +112,7 @@ class Schedule {
         });
         
         // Label Day
-        $.each(this.$scheduleElem.find(".label-schedule-day"), function(index, elem) {
+        $.each(this.$viewElement.find(".label-schedule-day"), function(index, elem) {
             $(elem).css({
                 "bottom": LABEL_SCHEDULE_DAY_BOTTOM + "%",
                 "left": ((100 / NUM_DAYS_PER_WEEK) * index) + "%",
@@ -120,8 +121,15 @@ class Schedule {
             });   
         });
         
+        // Checkbox Label Day
+        var thisSchedule = this;
+        $.each(thisSchedule.$viewElement.find(".checkbox-schedule-day"), function (index, elem) {
+            $(elem).prop("checked", thisSchedule.daysDisableList.indexOf($(elem).prop("class").split("-")[5]) < 0);
+            $(elem).prop("disabled", scheduleProperty(thisSchedule.scheduleType).CHECKBOX_SCHEDULE_DAY_IS_DISABLED);
+        });
+        
         // Column Label Time
-        var $colLabelTimeElem = this.$scheduleElem.find(".col-label-schedule-time");
+        var $colLabelTimeElem = this.$viewElement.find(".col-label-schedule-time");
         $colLabelTimeElem.css({
             "top": TABLE_SCHEDULE_TOP + "%",
             "left": 0 + "%",
@@ -130,9 +138,9 @@ class Schedule {
         });
         
         // Label Time
-        $.each(this.$scheduleElem.find(".label-schedule-time"), function(index, elem) {
+        $.each(this.$viewElement.find(".label-schedule-time"), function(index, elem) {
             var height = LABEL_SCHEDULE_TIME_HEIGHT;
-            var top = (100 / (scheduleProperty(this.scheduleIndex).NUM_LABELS_SCHEDULE_TIME - 1)) * 
+            var top = (100 / (scheduleProperty(this.scheduleType).NUM_LABELS_SCHEDULE_TIME - 1)) * 
                 index - height / 2.5;
             $(elem).css({
                 "top": top + "%",
@@ -143,7 +151,7 @@ class Schedule {
         });
      
         // Display Schedule
-        var $displayScheduleElem = this.$scheduleElem.find(".display-schedule");
+        var $displayScheduleElem = this.$viewElement.find(".display-schedule");
         $displayScheduleElem.css({
             "top": TABLE_SCHEDULE_TOP + "%", 
             "left": TABLE_SCHEDULE_LEFT + "%",
@@ -152,39 +160,35 @@ class Schedule {
         });
     }
     
-    show() {
-        this.$scheduleElem.show();
-    }
-    
-    hide() {
-        this.$scheduleElem.hide();
-    }
-    
     appendCourse(newCourse_) {
         this.courseList.push(newCourse_);
         for (var i = 0; i < newCourse_.sectionList.length; i++) {
             var currentSection = newCourse_.sectionList[i];
+            currentSection.scheduleType = this.scheduleType;
             for (var j = 0; j < currentSection.classList.length; j++) {
                 var currentClass = currentSection.classList[j];
+                currentClass.scheduleType = this.scheduleType;
                 var dayOfWeek = currentClass.classData.dayOfWeek;
                 var currentClassList = this.classList[dayOfWeek];
                 this.insertToClassList(currentClassList, currentClass);
                 this.arrangeClassListView(currentClassList);
             }
         }
-        this.$scheduleElem.find(".display-schedule").append(newCourse_.$viewElement);
+        this.$viewElement.find(".display-schedule").append(newCourse_.$viewElement);
     }
     
     appendSection(newSection_) {
+        newSection_.scheduleType = this.scheduleType;
         this.sectionList.push(newSection_);
         for (var i = 0; i < newSection_.classList.length; i++) {
             var currentClass = newSection_.classList[i];
+            currentClass.scheduleType = this.scheduleType;
             var dayOfWeek = currentClass.classData.dayOfWeek;
             var currentClassList = this.classList[dayOfWeek];
             this.insertToClassList(currentClassList, currentClass);
             this.arrangeClassListView(currentClassList);
         }
-        this.$scheduleElem.find(".display-schedule").append(newSection_.$viewElement);
+        this.$viewElement.find(".display-schedule").append(newSection_.$viewElement);
     }
     
     insertToClassList(classList_, class_) {

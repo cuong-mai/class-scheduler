@@ -5,11 +5,8 @@ var MIN_TIME = "08:00";
 var MAX_TIME = "18:00";
 
 // Types of Schedule
-var SCHEDULE_OVERVIEW_TYPE = 0;
-var SCHEDULE_RESULT_TYPE = 1;
-
-// Index of Table Scheules
-var SCHDEDULE_OVERVIEW_INDEX = 0;
+var SCHEDULE_OVERVIEW_TYPE = "overview";
+var SCHEDULE_RESULT_TYPE = "result";
 
 // Top, Left of Table Schedule (%)
 var TABLE_SCHEDULE_TOP = 5;
@@ -30,26 +27,34 @@ var ENABLE_BY_CLICK = true;
 var ENABLE_NOT_BY_CLICK = false;
 
 // Unique Properties of Schedule Overview (0) /Result (1)
-function scheduleProperty(scheduleIndex_) {
+function scheduleProperty(scheduleType_) {
+    var TYPE;
     var HOUR_STEP;
+    var CHECKBOX_SCHEDULE_DAY_IS_DISABLED;
     var NUM_TABLE_SCHEDULE_ROWS;
     var NUM_LABELS_SCHEDULE_TIME;
     var SCHEDULE_ID_PREFIX;
     var SCHEDULE_CLASS;
-    var HEADER_TITLE_RIGHT_PANEL;
     var LABEL_CLASS_HIDEABLE_CSS_DISPLAY;
+    var CLASS_STATUS_CSS_DISPLAY;
     
     // Unique Properties
-    if (scheduleIndex_ == SCHDEDULE_OVERVIEW_INDEX) {
+    if (scheduleType_ == SCHEDULE_OVERVIEW_TYPE) {
+        TYPE = "Overview";
         HOUR_STEP = 0.5;
+        CHECKBOX_SCHEDULE_DAY_IS_DISABLED = false;
         SCHEDULE_ID_PREFIX = "overview";
         SCHEDULE_CLASS = "overview";
         LABEL_CLASS_HIDEABLE_CSS_DISPLAY = "inline";
+        CLASS_STATUS_CSS_DISPLAY = "inline";
     } else {
+        TYPE = "Result";
         HOUR_STEP = 1;
+        CHECKBOX_SCHEDULE_DAY_IS_DISABLED = true;
         SCHEDULE_ID_PREFIX = "result-";
         SCHEDULE_CLASS = "result";
         LABEL_CLASS_HIDEABLE_CSS_DISPLAY = "none";
+        CLASS_STATUS_CSS_DISPLAY = "none";
     }
     
     // Common Propoerties
@@ -57,12 +62,15 @@ function scheduleProperty(scheduleIndex_) {
     NUM_LABELS_SCHEDULE_TIME = NUM_TABLE_SCHEDULE_ROWS * HOUR_STEP + 1;
 
     return {
+        TYPE,
         HOUR_STEP, 
+        CHECKBOX_SCHEDULE_DAY_IS_DISABLED,
         NUM_TABLE_SCHEDULE_ROWS, 
         NUM_LABELS_SCHEDULE_TIME,
         SCHEDULE_ID_PREFIX, 
         SCHEDULE_CLASS,
-        LABEL_CLASS_HIDEABLE_CSS_DISPLAY
+        LABEL_CLASS_HIDEABLE_CSS_DISPLAY,
+        CLASS_STATUS_CSS_DISPLAY
     };
 }
 
@@ -259,12 +267,17 @@ function countSectionEnable(sectionList_) {
 
 function toggleEnableSection() {
     var clickedSection = this;
+    var sectionInfo = clickedSection.courseCode + "-" + clickedSection.sectionData.code;
     if (!clickedSection.isOpen) {
         clickedSection.open();
-//        clickedSection.enable();
+        if (gSectionClosedInfoList.indexOf(sectionInfo) >=0 ) {
+            gSectionClosedInfoList.splice(gSectionClosedInfoList.indexOf(sectionInfo), 1);
+        }
     } else {
         clickedSection.close();
-//        clickedSection.disable();
+        if (gSectionClosedInfoList.indexOf(sectionInfo) < 0 ) {
+            gSectionClosedInfoList.push(sectionInfo);
+        }
     }
 }
 
@@ -300,11 +313,17 @@ function toggleEnableDay() {
     var schedule = objectPassed.schedule;
     var dayOfWeek = objectPassed.dayOfweek;
     if ($changedCheckbox.prop("checked")) {
+        if (gDayDisabledList.indexOf(dayOfWeek) >= 0) {
+            gDayDisabledList.splice(gDayDisabledList.indexOf(dayOfWeek), 1);
+        }
         for (var i = 0; i < schedule.classList[dayOfWeek].length; i++) {
             var currentClass = schedule.classList[dayOfWeek][i];
             parentSection(gCourseList, currentClass).enable();
         }
     } else {
+        if (gDayDisabledList.indexOf(dayOfWeek) < 0) {
+            gDayDisabledList.push(dayOfWeek);
+        }
         for (var i = 0; i < schedule.classList[dayOfWeek].length; i++) {
             var currentClass = schedule.classList[dayOfWeek][i];
             parentSection(gCourseList, currentClass).disable();

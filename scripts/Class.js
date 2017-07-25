@@ -6,7 +6,7 @@ class Class {
         this.color = color_;
         this.classData = classData_;
         this.zOrder = zOrder_;
-//        this.scheduleIndex = scheduleIndex_;
+        this.scheduleType = "";
         this.$viewElement = $($.parseHTML(
             '<div class="class">' + 
                 '<label class="label-class">' + this.courseCode + '-</label>' +
@@ -16,7 +16,7 @@ class Class {
                 '<label class="label-class label-class-hideable">' + time24ToAP(this.classData.startTime) + '-</label>' +
                 '<label class="label-class label-class-hideable">' + time24ToAP(this.classData.endTime) + '</label>' +
                 '<div class="class-status">' +
-                    '<label class="label-class-status">Open</label>' +
+                    '<label class="label-class-status">On</label>' +
                     '<div class="sign-class-status"></div>' +
                 '</div>' +
             '</div>'
@@ -61,7 +61,7 @@ class Class {
             '</div>'
         ));
         
-        this.updateView();
+//        this.updateView(); // To be called when appended by Section
     }
     
     // TODO: Pass zOrder here instead of in constructor
@@ -75,19 +75,20 @@ class Class {
              "background-color": this.color
         });
         this.$viewElement.find(".class-status").css({
-            "background-color": this.color    
+            "display": scheduleProperty(this.scheduleType).CLASS_STATUS_CSS_DISPLAY,
+            "background-color": this.color
         });
     }
     
     open() {
-        this.$viewElement.find(".label-class-status").text("Open");
+        this.$viewElement.find(".label-class-status").text("On");
         this.$viewElement.find(".sign-class-status").css({
             "background-color": "lightgreen"    
         });
     }
 
     close() {
-        this.$viewElement.find(".label-class-status").text("Closed");
+        this.$viewElement.find(".label-class-status").text("Off");
         this.$viewElement.find(".sign-class-status").css({
             "background-color": "red"    
         });

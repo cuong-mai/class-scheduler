@@ -9,13 +9,13 @@ function importData() {
 }
 
 function generateSchedules() {
-//    gRightPanel.hideSchedulePage(gSchedulePageOverview);
-    gSchedulePageResult = new SchedulePage();
+    gRightPanel.hideSchedulePage(gSchedulePageOverview);
+    gSchedulePageResult = new SchedulePage("result", gSectionClosedInfoList, gDayDisabledList);
     
     $(".spinner-wrapper").fadeIn(200, function () {
         gSectionCombList = combineSections(gCourseList);
         for (var i = 0; i < gSectionCombList.length; i++) {
-            gScheduleResultList[i] = new Schedule(i + 1);
+            gScheduleResultList[i] = new Schedule("result", gDayDisabledList);
             var sectionList = gSectionCombList[i];
             for (var j = 0; j < sectionList.length; j++) {
                 gScheduleResultList[i].appendSection(sectionList[j]);
