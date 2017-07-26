@@ -5,6 +5,10 @@ body {
     font-size: 10pt;
 }
 
+body label {
+    font-weight: normal;
+}
+
 .row-header {
     height: 84px;
     text-align: center;
@@ -82,6 +86,77 @@ body {
 .row-content {
     margin-top: 24px;
 }
+
+.overlay {
+/*    display: none;*/
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.row-import-container {
+    z-index: 9999;
+    overflow: auto;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    height: 80%;
+    width: 60%;
+    background-color: white;
+    box-shadow: 7px 7px 7px #222222;
+}
+
+.row-import-header {
+    margin-bottom: 32px;
+    padding-top: 8px;
+    height: 38px;
+    text-align: center;
+    background-color: #d35151;;
+    color: white;
+}
+
+.import-header-title {
+    font-size: 12pt;
+}
+
+.row-import-content {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.row-import-container select {
+    margin-left: 8px;
+    margin-right: 32px;
+    width: 150px;
+    font-size: 10pt;
+}
+
+.table-import {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-import td {
+    border: none;
+    text-align: left;
+}
+
+.accordion-toggle:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e080";
+    color: grey;
+}
+
+.accordion-toggle.collapsed:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e114";
+}
+
+
 
 /*Left Panel*/
 .row-left-panel {

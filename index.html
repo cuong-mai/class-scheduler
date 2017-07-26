@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>Class Schedule Planner</title>
-        <link rel="stylesheet" href="styles/bootstrap.min.css">
-        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     
     <body>
@@ -107,24 +107,92 @@
                         </a>
                     </div>
                 </div>
-            </div> <!-- End of Row Header -->
+            </div> <!-- End of Row Footer -->
+            
+            <div class="overlay">
+            </div>
+            
+            <div class="row row-import-container">
+                <div class="col-sm-12">
+                    <div class="row row-import-header">
+                        <div class="col-sm-12">
+                            <label class="import-header-title">Select courses you want to enrol</label>
+                        </div>
+                    </div>    
+                    <div class="row row-import-content">
+                        <div class="col-sm-2">
+                            <label class="">Institution:</label>
+                        </div>
+                        <div class="col-sm-10">
+                                <select class="select-import">
+                                <option>Seneca College</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row row-import-content">
+                        <div class="col-sm-2">
+                            <label class="">Term:</label>
+                        </div>
+                        <div class="col-sm-10">
+                            <select class="select-import">
+                                <option>Fall 2017</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row row-import-content">
+                        <div class="col-sm-12">
+                            <label>Courses:</label>
+                        </div>
+                    </div>
+                    <div class="row row-import-content">
+                        <div class="col-sm-12">
+                            <table class="table-import">
+                                <tr>
+                                    <td></td>   
+                                    <td></td>   
+                                    <td>Course Code</td>
+                                    <td>Course Name</td>
+                                    <td>Number of Sections</td>
+                                    <td>Data Updated on</td>
+                                
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a class="accordion-toggle" data-toggle="collapse" data-target="#demo1">
+                                        </a>
+                                    </td>   
+                                    <td><input type="checkbox"></td>   
+                                    <td>OOP244</td>
+                                    <td>Introduction to Object-oriented Programming</td>
+                                    <td>4</td>
+                                    <td>07/26/2017 (01:20AM)</td>
 
+                                </tr>
+                                <tr>
+                                    <td colspan="6" class="hiddenRow"><div id="demo1" class="accordian-body collapse">Demo2</div></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>    
+                </div>
+            </div>             
         </div> <!-- End of Container -->   
         
+        
 
-        <script src="scripts/jquery-3.2.1.min.js"></script>
-        <script src="scripts/bootstrap.min.js"></script>
-        <script src="scripts/data.js"></script>
-        <script src="scripts/settings.js"></script>
-        <script src="scripts/Class.js"></script>
-        <script src="scripts/Section.js"></script>
-        <script src="scripts/left_panel.js"></script>
-        <script src="scripts/Schedule.js"></script>
-        <script src="scripts/Course.js"></script>
-        <script src="scripts/CourseContainer.js"></script>
-        <script src="scripts/SchedulePage.js"></script>
-        <script src="scripts/RightPanel.js"></script>
-        <script src="scripts/controls.js"></script>
-        <script src="scripts/main.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/Class.js"></script>
+        <script src="js/Section.js"></script>
+        <script src="js/left_panel.js"></script>
+        <script src="js/Schedule.js"></script>
+        <script src="js/Course.js"></script>
+        <script src="js/CourseContainer.js"></script>
+        <script src="js/SchedulePage.js"></script>
+        <script src="js/RightPanel.js"></script>
+        <script src="js/controls.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

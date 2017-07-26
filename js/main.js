@@ -16,6 +16,8 @@ $(document).ready(function () {
     assignEvents();
     
     importData(); 
+    
+    
 });
 
 function init() {
