@@ -34,6 +34,7 @@ function init() {
 }
 
 function assignEvents() {
+    $(".accordion-toggle").click(toggleCollapseIcon);
     $("#button-import").click(importData);
     $("#button-generate").click(generateSchedules);
 }

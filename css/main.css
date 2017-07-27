@@ -5,7 +5,7 @@ body {
     font-size: 10pt;
 }
 
-body label {
+label {
     font-weight: normal;
 }
 
@@ -100,7 +100,6 @@ body label {
 
 .row-import-container {
     z-index: 9999;
-    overflow: auto;
     position: absolute;
     top: 10%;
     left: 20%;
@@ -111,7 +110,7 @@ body label {
 }
 
 .row-import-header {
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     padding-top: 8px;
     height: 38px;
     text-align: center;
@@ -128,35 +127,65 @@ body label {
     padding-right: 32px;
 }
 
+.row-import-info {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    background-color: #f6f6f6;
+}
+
+.icon-import-notice {
+    height: 16px;
+}
+
+.label-import-notice {
+    position: relative;
+    top: 2px;
+    left: 8px;
+    font-size: 9pt;
+    font-style: italic;
+}
+
 .row-import-container select {
     margin-left: 8px;
     margin-right: 32px;
-    width: 150px;
+    width: 100%;
     font-size: 10pt;
+}
+
+.row-import-course-container {
+    overflow: auto;
+    margin-top: 16px;
 }
 
 .table-import {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0px;
 }
 
 .table-import td {
     border: none;
+    padding-left: 8px;
+    padding-right: 8px;
+/*    padding-top: 1px;*/
+    padding-bottom: 1px;
     text-align: left;
 }
 
-.accordion-toggle:after {
-    font-family: 'Glyphicons Halflings';
-    content: "\e080";
-    color: grey;
+.td-import-section {
+    background-color: #f6f6f6;
 }
 
-.accordion-toggle.collapsed:after {
-    font-family: 'Glyphicons Halflings';
-    content: "\e114";
+.accordion-toggle {
+    cursor: pointer;
+    width: 16px;
+    font-size: 8pt;
 }
 
-
+.td-import-section span {
+    width: 100px;;
+}
 
 /*Left Panel*/
 .row-left-panel {
@@ -238,7 +267,6 @@ body label {
 
 #left-panel .label-course {
     font-size: 9pt;
-/*    font-weight: bold;*/
 }
 
 input, select {
@@ -253,6 +281,7 @@ input, select {
 
 input[type="checkbox"] {
     position: relative;
+    cursor: pointer;
 }
 
 input[type="color"] {

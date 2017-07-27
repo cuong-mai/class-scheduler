@@ -8,6 +8,10 @@ function importData() {
     });
 }
 
+function toggleCollapseIcon() {
+    $(this).toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
+}
+
 function generateSchedules() {
     gRightPanel.hideSchedulePage(gSchedulePageOverview);
     gSchedulePageResult = new SchedulePage("result", gSectionClosedInfoList, gDayDisabledList);
