@@ -9,6 +9,7 @@ var data =
             [
                 {
                     "code": "DBS201",
+                    "name": "Introduction to Database Design and SQL",
                     "sectionList": 
                     [
                         {
@@ -83,11 +84,13 @@ var data =
                             ],
                             "color": "#04275e"
                         }
-                    ]
+                    ],
+                    "requiredTerm": "2nd"
                 },
                 
                 {
                     "code": "DCF255",
+                    "name": "Data Communications Fundamentals",
                     "sectionList": 
                     [
                         {
@@ -142,11 +145,13 @@ var data =
                             ],
                             "color": "#005100"
                         }
-                    ]
+                    ],
+                    "requiredTerm": "2nd"
                 },
 
                 {
                     "code": "OOP244",
+                    "name": "Introduction to Object Oriented Programming",
                     "sectionList": 
                     [
                         {
@@ -221,11 +226,13 @@ var data =
                             ],
                             "color": "#770303"
                         }
-                    ]
+                    ],
+                    "requiredTerm": "2nd"
                 },
 
                 {
                     "code": "WEB222",
+                    "name": "Web Programming Principles",
                     "sectionList": 
                     [
                         {
@@ -300,7 +307,8 @@ var data =
                             ],
                             "color": "#494f02"
                         }
-                    ]
+                    ],
+                    "requiredTerm": "2nd"
                 }
             ]
         }
