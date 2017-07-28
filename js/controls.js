@@ -3,8 +3,9 @@ function importData() {
         var courseData = this;
         var newCourse = new Course(courseData);
         gCourseList.push(newCourse);
-        gScheduleOverview.appendCourse(newCourse);
+        gImportCourseContainer.appendCourse(newCourse);
         gCourseContainer.appendCourse(newCourse);
+        gScheduleOverview.appendCourse(newCourse);
     });
 }
 

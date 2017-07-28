@@ -6,14 +6,30 @@ class Section {
         this.isOpen = true;
         this.isEnable = true;
         this.classList = [];
-        this.$viewElement = $($.parseHTML('<div class="section"></div>'));
-
         var courseIndex = 0;
         var sectionIndex = 0;
         var sectionCode = this.sectionData.code;
         var sectionTeacher = this.sectionData.teacher;
         var sectionColor = this.sectionData.color;
         var numberOfClasses = this.sectionData.classList.length;
+        
+        this.$importElement = $($.parseHTML(
+            '<tr>' +
+                '<td class=""></td>' +
+                '<td class="td-import-section"></td>' +
+                '<td class="td-import-section">' +
+                    '<div id="" class="accordian-body collapse section-of-' + this.courseCode + '">' +
+                        'Section' +
+                    '</div>' +
+                '</td>' +
+                '<td class="td-import-section">' +
+                    '<div id="" class="accordian-body collapse section-of-' + this.courseCode + '">' +
+                        this.sectionData.code + ' (' + this.sectionData.teacher + ') ' +
+                    '</div>' +
+                '</td>' +
+            '</tr>'
+        ));
+        
         this.$controlElement = $($.parseHTML(
             '<div id="section-' + courseIndex + '-' + sectionIndex + '" class="row row-section">' +
                 '<div class="col-sm-12">' +    
@@ -49,6 +65,8 @@ class Section {
             '</div>'
         ));
         
+        this.$viewElement = $($.parseHTML('<div class="section"></div>'));
+        
         for (var i = 0; i < sectionData_.classList.length; i++) {
             var classData = sectionData_.classList[i];
             var newClass = new Class(this.courseCode, this.sectionData.code, this.sectionData.teacher, 
@@ -60,6 +78,21 @@ class Section {
     appendClass(newClass_) {
         newClass_.scheduleType = this.scheduleType;
         this.classList.push(newClass_);
+        
+        if (this.classList.length == 1) {
+            this.$importElement.append(newClass_.$importElement);
+        } else {
+            this.$importElement = this.$importElement.add($($.parseHTML(
+                '<tr></tr>'
+            )));
+            this.$importElement.last().append($($.parseHTML(
+                '<td class=""></td>' +
+                '<td class="td-import-section"></td>' +
+                '<td class="td-import-section"></td>' +
+                '<td class="td-import-section"></td>'
+            ))).append(newClass_.$importElement);
+        }
+        
         this.$controlElement.children().first().append(newClass_.$controlElement);
         this.$viewElement.append(newClass_.$viewElement);
         

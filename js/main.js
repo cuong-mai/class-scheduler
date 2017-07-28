@@ -1,6 +1,7 @@
 // Global Variables
 var gDayDisabledList = [];
 var gSectionClosedInfoList = [];
+var gImportCourseContainer;
 var gCourseContainer;
 var gRightPanel;
 var gSchedulePageOverview;
@@ -14,13 +15,12 @@ var gSectionCombList = new Array();
 $(document).ready(function () {
     init();
     assignEvents();
-    
     importData(); 
-    
-    
 });
 
 function init() {
+    gImportCourseContainer = new ImportCourseContainer();
+    
     gRightPanel = new RightPanel();
     gSchedulePageOverview = new SchedulePage("overview", gSectionClosedInfoList, gDayDisabledList);
     gRightPanel.appendSchedulePage(gSchedulePageOverview);

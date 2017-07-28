@@ -104,9 +104,13 @@ label {
     top: 10%;
     left: 20%;
     height: 80%;
-    width: 60%;
+    width: 62%;
     background-color: white;
-    box-shadow: 7px 7px 7px #222222;
+    box-shadow: 8px 8px 32px #222222;
+}
+
+.col-import-container {
+    height: 100%;
 }
 
 .row-import-header {
@@ -155,7 +159,14 @@ label {
 
 .row-import-course-container {
     overflow: auto;
+    position: absolute;
+    top: 180px;
+    bottom: 32px;
+    left: 16px;
+    right: 48px;
+    height: auto;
     margin-top: 16px;
+    padding-right: 0px;
 }
 
 .table-import {
