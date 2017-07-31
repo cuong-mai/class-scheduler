@@ -4,6 +4,10 @@ class Schedule {
     constructor(scheduleType_, dayDisabledList_) {
         this.scheduleType = scheduleType_;
         this.daysDisableList = dayDisabledList_;
+        this.init();
+    }
+    
+    init() {
         this.courseList = [];
         this.sectionList = [];
         this.classList = new Array();
@@ -17,38 +21,38 @@ class Schedule {
         var colClass = (this.scheduleType == SCHEDULE_OVERVIEW_TYPE ? 12 : 10);
         var $viewElement = $($.parseHTML(
             '<div id="row-schedule-' + scheduleId + '" class="row row-schedule row-schedule-' + scheduleClass + '">' +
-                '<div class="col-sm-1 height-100-percent col-schedule-number">'+ "." + '</div>' + 
-                '<div class="col-sm-' + colClass + ' height-100-percent">' +    
-                    '<div class="row height-100-percent">' +
-                        '<div class="col-sm-12 height-100-percent">' + 
-                            '<div class="row-label-schedule-day"></div>' +
-                            '<div class="col-label-schedule-time"></div>' +
-                            '<div class="display-schedule">' +
-                                '<table id="table-schedule-' + scheduleId + '" class="table-schedule"></table>' +
-                            '</div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-                '<div class="col-sm-1 height-100-percent col-button-view">' +
-                    '<div>' +
-                        '<button class="button-export">Export</button>' + 
-                        '<button class="button-view">View</button>' +
-                    '</div>' +
-                '</div>' + 
+            '<div class="col-sm-1 height-100-percent col-schedule-number">'+ "." + '</div>' + 
+            '<div class="col-sm-' + colClass + ' height-100-percent">' +    
+            '<div class="row height-100-percent">' +
+            '<div class="col-sm-12 height-100-percent">' + 
+            '<div class="row-label-schedule-day"></div>' +
+            '<div class="col-label-schedule-time"></div>' +
+            '<div class="display-schedule">' +
+            '<table id="table-schedule-' + scheduleId + '" class="table-schedule"></table>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="col-sm-1 height-100-percent col-button-view">' +
+            '<div>' +
+            '<button class="button-export">Export</button>' + 
+            '<button class="button-view">View</button>' +
+            '</div>' +
+            '</div>' + 
             '</div>'
         )); 
-        
+
         // Add row and labels day
         var $rowLabelScheduleDayElem = $viewElement.find(".row-label-schedule-day");
         for (var i = 0; i < NUM_DAYS_PER_WEEK; i++) {
             var $labelScheduleDayElem = $($.parseHTML(
                 '<div class="label-schedule-day">' +
-                    '<span>' + DAYS_OF_WEEK[i] + '</span>' +
-                    '<input type="checkbox" class="checkbox-schedule-day checkbox-schedule-day-' + DAYS_OF_WEEK[i] + '" checked>' +
+                '<span>' + DAYS_OF_WEEK[i] + '</span>' +
+                '<input type="checkbox" class="checkbox-schedule-day checkbox-schedule-day-' + DAYS_OF_WEEK[i] + '" checked>' +
                 '</div>'
             ));
             $rowLabelScheduleDayElem.append($labelScheduleDayElem);
-            
+
             var thisSchedule = this;
             var objectPassed = {schedule: thisSchedule, dayOfweek: null, $checkbox: null};
             $labelScheduleDayElem.children("input").unbind();
@@ -58,7 +62,7 @@ class Schedule {
                 toggleEnableDay.call(objectPassed);
             });
         }
-        
+
         // Add column and labels time
         var $colLabelScheduleTimeElem = $viewElement.find(".col-label-schedule-time");
         var timeArray = toTimeArray(MIN_TIME, MAX_TIME);
@@ -79,11 +83,10 @@ class Schedule {
             }
             $tableScheduleElem.append($rowElem);
         }
-        
+
         // Append Element to parent
         this.$viewElement = $viewElement;
-//        $("#row-schedule-container").children().first().append(this.$viewElement);
-        
+
         // Update View
         this.updateView();
     }
@@ -256,6 +259,19 @@ class Schedule {
                 subColumnList[0] = new Array();
                 subColumnCount = 1;
             }
+        }
+    }
+    
+    clear() {
+        for (var i = 0; i < this.courseList.length; i++) {
+            var currentCourse = this.courseList[i];
+            this.$viewElement.find(currentCourse.$viewElement).detach();
+        }
+        this.courseList = [];
+        this.sectionList = [];
+        this.classList = new Array();
+        for (var i =0; i < NUM_DAYS_PER_WEEK; i++) {
+            this.classList[DAYS_OF_WEEK[i]] = new Array();
         }
     }
 }

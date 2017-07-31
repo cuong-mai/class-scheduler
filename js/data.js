@@ -567,3 +567,48 @@ var dataTmp = {
         }
     ]
 };
+
+var gEmptyCourseData = 
+{
+    "code": "",
+    "name": "",
+    "sectionList": 
+    [
+        {
+            "code": "",
+            "teacher": "",
+            "classList": 
+            [
+                {
+                    "dayOfWeek": "",
+                    "startTime": "",
+                    "endTime": ""
+                },
+                {
+                    "dayOfWeek": "",
+                    "startTime": "",
+                    "endTime": ""
+                }
+            ],
+            "color": "#0061ff"
+        },
+        {
+            "code": "",
+            "teacher": "",
+            "classList": 
+            [
+                {
+                    "dayOfWeek": "",
+                    "startTime": "",
+                    "endTime": ""
+                },
+                {
+                    "dayOfWeek": "",
+                    "startTime": "",
+                    "endTime": ""
+                }
+            ],
+            "color": "#054bbc"
+        }
+    ]
+}

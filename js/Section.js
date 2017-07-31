@@ -36,7 +36,7 @@ class Section {
                     '<div class="row row-of-left-panel">' +
                         '<div class="col-sm-6 col-of-left-panel">' +
                             '<input type="checkbox" checked>' +
-                            '<label>Section ' + (sectionIndex + 1) + '</label>' +   
+                            '<label>Section ' + '</label>' +   
                         '</div>' +
                         '<div class="col-sm-6 col-of-left-panel">' +
                             '<span class="button-delete"></span>' +   

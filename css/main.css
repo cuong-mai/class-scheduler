@@ -88,7 +88,7 @@ label {
 }
 
 .overlay {
-/*    display: none;*/
+    display: none;
     z-index: 999;
     position: absolute;
     top: 0;
@@ -98,7 +98,8 @@ label {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.row-import-container {
+.row-import-dialog {
+    display: none;
     z-index: 9999;
     position: absolute;
     top: 10%;
@@ -109,7 +110,7 @@ label {
     box-shadow: 8px 8px 32px #222222;
 }
 
-.col-import-container {
+.col-import-dialog {
     height: 100%;
 }
 
@@ -150,7 +151,7 @@ label {
     font-style: italic;
 }
 
-.row-import-container select {
+.row-import-dialog select {
     margin-left: 8px;
     margin-right: 32px;
     width: 100%;
@@ -161,7 +162,7 @@ label {
     overflow: auto;
     position: absolute;
     top: 180px;
-    bottom: 32px;
+    bottom: 96px;
     left: 16px;
     right: 48px;
     height: auto;
@@ -184,6 +185,13 @@ label {
     text-align: left;
 }
 
+.table-import input[type="checkbox"] {
+/*
+    height: 16px;
+    width: 16px;
+*/
+}
+
 .td-import-section {
     background-color: #f6f6f6;
 }
@@ -196,6 +204,12 @@ label {
 
 .td-import-section span {
     width: 100px;;
+}
+
+.row-button-import-dialog {
+    position: absolute;
+    width: 100%;
+    bottom: 32px;
 }
 
 /*Left Panel*/
@@ -313,6 +327,10 @@ input[type="time"]::-webkit-inner-spin-button {
 }
 input[type="time"] {
     -moz-appearance: textfield;
+}
+
+button:disabled {
+    background-color: #d3d0d0;
 }
 
 #button-add-course {
@@ -522,27 +540,47 @@ td {
     background-color: lightgreen;
 }
 
-/* Loading Spinner */
-.spinner-wrapper {
+/* Message */
+.row-message {
+/*    display: none;*/
+    z-index: 99;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    height: 80%;
+    width: 100%;
+    background-color: white;
+}
+
+.row-message-loading {
     display: none;
+}
+
+.message-wrapper {
     position: absolute;
     top: 40%;
     left: 40%;
-    height: 100px;
+    height: 200px;
     width: 200px;
     text-align: center;
 }
 
-.spinner-wrapper p {
-    color: grey;
-    font-size: 12pt;
+.message-wrapper img {
+    height: 64px;
 }
+
+.message-wrapper p {
+    margin-top: 16px;
+    color: grey;
+    font-size: 11pt;
+}
+
 
 .spinner {
     display: block;
     left: 25%;
     width: 50%;
-    height: 100%;
+    height: 50%;
     border-radius: 50%;
     position: relative;
 }
@@ -554,14 +592,14 @@ td {
     border-radius: 50%;
 }
 
-.spinner-4:before, .spinner-4:after {
+.spinner-1:before, .spinner-1:after {
     position: absolute;
     background: #d35151;
     -webkit-animation: pulse 3s linear infinite;
     animation: pulse 3s linear infinite;
     opacity: 0;
 }
-.spinner-4:after {
+.spinner-1:after {
     -webkit-animation: pulse 2s linear 2.3s infinite;
     animation: pulse 2s linear 2.3s infinite;
 }

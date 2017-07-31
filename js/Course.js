@@ -3,33 +3,38 @@ class Course {
         this.courseData = courseData_;
         this.scheduleType = "";
         this.sectionList = [];
-        this.activeSectionIndex = null;
         var index = 0;
         var courseCode = this.courseData.code;
         var numberOfSections = this.courseData.sectionList.length;
         this.$importElement = $($.parseHTML(
-//            '<tr>' +
-                '<tr>' +
-                    '<td>' +
-                        '<span class="accordion-toggle glyphicon glyphicon-chevron-right" data-toggle="collapse" data-target=".section-of-' + this.courseData.code + '">' +
-                        '</span>' +
-                    '</td>' +   
-                    '<td><input type="checkbox"></td>' +
-                    '<td>' + this.courseData.code + '</td>' +
-                    '<td>' + this.courseData.name + '</td>' +
-                    '<td>'+ numberOfSections + ' sections offered</td>' +
-                    '<td>Required for: ' + this.courseData.requiredTerm + ' term</td>' +
-//                '</tr>' +
+            '<tr>' +
+                '<td>' +
+                    '<span class="accordion-toggle glyphicon glyphicon-chevron-right" data-toggle="collapse" data-target=".section-of-' + this.courseData.code + '">' +
+                    '</span>' +
+                '</td>' +   
+                '<td><input type="checkbox" class="checkbox-import"></td>' +
+                '<td>' + this.courseData.code + '</td>' +
+                '<td>' + this.courseData.name + '</td>' +
+                '<td>'+ numberOfSections + ' sections offered</td>' +
+                '<td>Required for: ' + this.courseData.requiredTerm + ' term</td>' +
             '</tr>'
         ));
         
+        var thisCourse = this;
+        var objectPassed = {course: thisCourse, checked: false};
+        this.$importElement.find(".checkbox-import").unbind();
+        this.$importElement.find(".checkbox-import").bind("click", function () {
+            objectPassed.checked = $(this).prop("checked");
+            toggleSelectCourse.call(objectPassed);
+        });
+
         this.$controlElement = $($.parseHTML(
-            '<div id="course-' + index + '" class="row">' +
+            '<div id="course-' + '" class="row">' +
                 '<div class="col-sm-12">' +
                     '<div class="row row-of-left-panel row-course-heading">' +
                         '<div class="col-sm-6 col-of-left-panel">' + 
                             '<input type="checkbox" checked>' +
-                            '<label class="label-course">Course ' + (index + 1) + '</label>' +  
+                            '<label class="label-course">Course ' + '</label>' +  
                             '<input type="text" class="input-large" value="' + courseCode + '">' +   
                         '</div>' +
                         '<div class="col-sm-6 col-of-left-panel">' +
@@ -39,6 +44,8 @@ class Course {
                         '</div>' +
                     '</div>' +
                 '</div>' +
+            '</div>' +
+            '<div class="row-break">' +
             '</div>'
         ));
         

@@ -1,7 +1,7 @@
 class SchedulePage {
     constructor(schedulePageType_, sectionClosedInfoList_, dayDisabledList_) {
         this.schedulePageType = schedulePageType_;
-
+        
         var type = scheduleProperty(this.schedulePageType).TYPE;
         var sectionClosedInfoListStr = (sectionClosedInfoList_.length > 0 ? "" : "None");
         for (var i = 0; i < sectionClosedInfoList_.length; i++) {

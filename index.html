@@ -46,7 +46,7 @@
                             <!-- Row Button Generate -->
                             <div class="row row-button-left-panel">
                                 <div class="col-sm-12 col-of-left-panel">
-                                    <button id="button-generate" class="button-generate">Generate Schedules</button>
+                                    <button id="button-generate" class="button-generate" disabled>Generate Schedules</button>
                                 </div>
                             </div> <!-- End of Row Button Generate -->
                             <!-- Row Button Reset -->
@@ -71,11 +71,19 @@
                                     <img class="button-navigation-schedule button-navigation-schedule-forward" src="images/button_schedule_forward_disabled.png">
                                 </div>
                             </div> <!-- End of Row Header of Right Panel -->
-                            <div class="spinner-wrapper">
-                                <div class="spinner spinner-4"></div>
-                                <p> Generating schedules <br>
-                                    Please wait...</p>
-                            </div>
+                            
+                            <!-- Message -->
+                            <div class="row row-message row-message-loading">
+                                <div class="col-sm-12 height-100-percent">
+                                    <div class="message-wrapper">
+                                        <div class="spinner spinner-1"></div>
+                                        <p class="message-text"> 
+                                            Generating schedules <br>
+                                            Please wait...
+                                        </p>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>   
                     </div> <!-- End of Row Right Panel -->
                 </div>
@@ -109,12 +117,13 @@
                 </div>
             </div> <!-- End of Row Footer -->
             
+            <!-- Overlay -->
             <div class="overlay">
-            </div>
+            </div> <!-- End of Overlay -->
             
-            <!-- Row Import-Container -->
-            <div class="row row-import-container">
-                <div class="col-sm-12 col-import-container">
+            <!-- Row Import Dialog -->
+            <div class="row row-import-dialog">
+                <div class="col-sm-12 col-import-dialog">
                     <div class="row row-import-header">
                         <div class="col-sm-12">
                             <label class="import-header-title">Select courses you want to enroll</label>
@@ -183,161 +192,42 @@
                                 <thead>
                                 </thead> 
                                 <tbody>
-<!--
-                                    <tr>
-                                        <td>
-                                            <span class="accordion-toggle glyphicon glyphicon-chevron-right" data-toggle="collapse" data-target=".section-of-OOP244">
-                                            </span>
-                                        </td>   
-                                        <td><input type="checkbox"></td>   
-                                        <td>OOP244</td>
-                                        <td>Introduction to Object-oriented Programming</td>
-                                        <td>4 sections offered</td>
-                                        <td>Data updated on: 07/26/17</td>
-                                    </tr>
-                                    <tr>
-                                        <td class=""></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Section 
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                SCC (Chris + Vinay) 
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Wendesday
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                09:50AM - 11:40PM
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class=""></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Thursday
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                01:30PM - 03:15PM
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class=""></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Section 
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                SCC (Chris + Vinay) 
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Wendesday
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                09:50AM - 11:40PM
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class=""></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Thursday
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                01:30PM - 03:15PM
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class=""></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Section 
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                SCC (Chris + Vinay) 
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Wendesday
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                09:50AM - 11:40PM
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class=""></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section"></td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                Thursday
-                                            </div>
-                                        </td>
-                                        <td class="td-import-section">
-                                            <div id="" class="accordian-body collapse section-of-OOP244">
-                                                01:30PM - 03:15PM
-                                            </div>
-                                        </td>
-                                    </tr>
--->
                                 </tbody>
                             </table>
                         </div>
-                    </div>    
+                    </div> 
+                        <div class="row row-button-import-dialog">
+                            <div class="col-sm-3">
+                            </div>   
+                            <div class="col-sm-3">
+                                <button id="button-import-ok" class="button-import">Import</button>
+                            </div>    
+                            <div class="col-sm-3">
+                                <button id="button-import-cancel" class="button-import">Cancel</button>
+                            </div>    
+                            <div class="col-sm-3">
+                            </div>   
+                    </div>   
                 </div>
-            </div> <!-- End of Row Import Container -->             
+            </div> <!-- End of Row Import Dialog -->             
         </div> <!-- End of Container -->   
         
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/data.js"></script>
         <script src="js/settings.js"></script>
+        <script src="js/Message.js"></script>
+        <script src="js/Overlay.js"></script>
         <script src="js/Class.js"></script>
         <script src="js/Section.js"></script>
         <script src="js/left_panel.js"></script>
         <script src="js/Schedule.js"></script>
         <script src="js/Course.js"></script>
-        <script src="js/ImportCourseContainer.js"></script>
+        <script src="js/ImportDialog.js"></script>
         <script src="js/CourseContainer.js"></script>
         <script src="js/SchedulePage.js"></script>
         <script src="js/RightPanel.js"></script>
-        <script src="js/controls.js"></script>
+        <script src="js/events.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

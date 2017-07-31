@@ -265,22 +265,6 @@ function countSectionEnable(sectionList_) {
     return count;
 }
 
-function toggleEnableSection() {
-    var clickedSection = this;
-    var sectionInfo = clickedSection.courseCode + "-" + clickedSection.sectionData.code;
-    if (!clickedSection.isOpen) {
-        clickedSection.open();
-        if (gSectionClosedInfoList.indexOf(sectionInfo) >=0 ) {
-            gSectionClosedInfoList.splice(gSectionClosedInfoList.indexOf(sectionInfo), 1);
-        }
-    } else {
-        clickedSection.close();
-        if (gSectionClosedInfoList.indexOf(sectionInfo) < 0 ) {
-            gSectionClosedInfoList.push(sectionInfo);
-        }
-    }
-}
-
 function parentSection(courseList_, class_) {
     var sectionIndexFound = -1;
     var result = null;
@@ -305,30 +289,6 @@ function parentSection(courseList_, class_) {
         }
     }
     return result;
-}
-
-function toggleEnableDay() {
-    var objectPassed = this;
-    var $changedCheckbox = objectPassed.$checkbox;
-    var schedule = objectPassed.schedule;
-    var dayOfWeek = objectPassed.dayOfweek;
-    if ($changedCheckbox.prop("checked")) {
-        if (gDayDisabledList.indexOf(dayOfWeek) >= 0) {
-            gDayDisabledList.splice(gDayDisabledList.indexOf(dayOfWeek), 1);
-        }
-        for (var i = 0; i < schedule.classList[dayOfWeek].length; i++) {
-            var currentClass = schedule.classList[dayOfWeek][i];
-            parentSection(gCourseList, currentClass).enable();
-        }
-    } else {
-        if (gDayDisabledList.indexOf(dayOfWeek) < 0) {
-            gDayDisabledList.push(dayOfWeek);
-        }
-        for (var i = 0; i < schedule.classList[dayOfWeek].length; i++) {
-            var currentClass = schedule.classList[dayOfWeek][i];
-            parentSection(gCourseList, currentClass).disable();
-        }
-    }
 }
 
 function combineSections(courseList_) {

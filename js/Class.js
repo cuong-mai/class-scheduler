@@ -34,9 +34,10 @@ class Class {
                 '<div class="col-sm-3 col-of-left-panel">' +
                     '<div class="row-label">' +
                         '<input type="checkbox" checked>' +
-                        '<label>Day ' + (classIndex + 1) + '</label>' +   
+                        '<label>Class ' + '</label>' +   
                     '</div>' +
                     '<select class="input-large">' +
+                        '<option value=""></option>' +
                         '<option value="Monday">Mon</option>' +
                         '<option value="Tuesday">Tue</option>' +
                         '<option value="Wednesday">Wed</option>' +

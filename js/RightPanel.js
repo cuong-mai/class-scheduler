@@ -11,7 +11,7 @@ class RightPanel {
         this.$viewElement.find(".button-navigation-schedule-back").bind("click", function () {
             thisRightPanel.navigateSchedulePage(-1);
         });
-
+        
         this.schedulePageList = [];
         this.currentSchedulePageIndex = -1;
     }
@@ -25,10 +25,10 @@ class RightPanel {
         
         this.$viewElement.children().first().children().first().children().first().append(schedulePage_.$infoElement);
         this.$viewElement.children().first().append(schedulePage_.$viewElement);
-    
+        
         this.schedulePageList.push(schedulePage_);
         this.currentSchedulePageIndex = this.schedulePageList.length - 1;
-    
+        
         this.$viewElement.children().first().children().first().children().first().
         find(".label-schedule-page-number").text("Page " + (this.currentSchedulePageIndex + 1) + "/" + this.schedulePageList.length);
     }
@@ -65,4 +65,22 @@ class RightPanel {
             }
         }
     }
+    
+//    appendMessage(message_) {
+//        if (this.currentSchedulePageIndex >=0) {
+//            this.hideSchedulePage(this.schedulePageList[this.currentSchedulePageIndex]);
+//            this.$viewElement.find(".button-navigation-schedule-back").prop("src", "images/button_schedule_back_enabled.png");
+//            this.$viewElement.find(".button-navigation-schedule-forward").prop("src", "images/button_schedule_forward_disabled.png");
+//        }
+//        
+//        this.$viewElement.children().first().children().first().children().first().append(schedulePage_.$infoElement);
+//        this.$viewElement.children().first().append(schedulePage_.$viewElement);
+//        
+//        this.schedulePageList.push(schedulePage_);
+//        this.currentSchedulePageIndex = this.schedulePageList.length - 1;
+//        
+//        this.$viewElement.children().first().children().first().children().first().
+//        find(".label-schedule-page-number").text("Page " + (this.currentSchedulePageIndex + 1) + "/" + this.schedulePageList.length);
+//        
+//    }
 }
