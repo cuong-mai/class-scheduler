@@ -3,6 +3,8 @@ var gDayDisabledList = [];
 var gSectionClosedInfoList = [];
 
 var gOverlay;
+var gTooltipHandler;
+var gWelcomeDialog;
 var gImportDialog;
 var gCourseContainer;
 var gRightPanel;
@@ -19,13 +21,20 @@ var gSectionCombList = new Array();
 $(document).ready(function () {
     init();
     assignEvents();
-//    showImportDialog();
 });
 
 function init() {
+    $("#tooltip-comment").tooltip();   
+    gTooltipHandler = setInterval(toggleCommentTooltip, 180000);
+
     gCurrentTermData = data.termList[0];
     
     gOverlay = new Overlay();
+    gOverlay.show();
+
+    gWelcomeDialog = new WelcomeDialog();
+    gWelcomeDialog.show();
+
     gImportDialog = new ImportDialog();
     
     gRightPanel = new RightPanel();
@@ -34,6 +43,7 @@ function init() {
     
     gScheduleOverview = new Schedule("overview", gDayDisabledList);
     gSchedulePageOverview.appendSchedule(gScheduleOverview);
+    
     
     gCourseContainer = new CourseContainer();
     for (var i = 0; i < 2; i++) {
@@ -50,7 +60,9 @@ function init() {
 }
 
 function assignEvents() {
+    $(".button-comment").bind("click", stopCommentToolTip);
     $(".accordion-toggle").click(toggleCollapseIcon);
     $("#button-import").click(showImportDialog);
     $("#button-generate").click(generateSchedules);
+    $(window).resize(gWelcomeDialog.adjustVideoSize);
 }

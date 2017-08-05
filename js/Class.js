@@ -37,7 +37,6 @@ class Class {
                         '<label>Class ' + '</label>' +   
                     '</div>' +
                     '<select class="input-large">' +
-                        '<option value=""></option>' +
                         '<option value="Monday">Mon</option>' +
                         '<option value="Tuesday">Tue</option>' +
                         '<option value="Wednesday">Wed</option>' +
@@ -63,6 +62,8 @@ class Class {
             '</div>'
         ));
         
+        this.$controlElement.find("select").val(dayOfWeek);
+        
         this.$viewElement = $($.parseHTML(
             '<div class="class">' + 
                 '<label class="label-class">' + this.courseCode + '-</label>' +
@@ -77,11 +78,8 @@ class Class {
                 '</div>' +
             '</div>'
         ));
-        
-//        this.updateView(); // To be called when appended by Section
     }
     
-    // TODO: Pass zOrder here instead of in constructor
     updateView() {
         var position = timeToPosition(this.classData, this.zOrder);
         this.$viewElement.css({

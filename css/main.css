@@ -9,6 +9,14 @@ label {
     font-weight: normal;
 }
 
+button:hover {
+    transition: all 0.5s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 .row-header {
     height: 84px;
     text-align: center;
@@ -39,10 +47,23 @@ label {
     color: white;
 }
 
+.header-icon-container {
+    position: absolute;
+    top: 16px;;
+    right: 5%;
+}
+
+.header-icon-container img {
+    margin-right: 8px;
+    margin-left: 8px;
+    width: 32px;
+    height: 32px;
+}
+
 .header-background {
     position: absolute;
     top: -32px;
-    right: 0px;
+    left: 0px;
     
 }
 
@@ -50,9 +71,10 @@ label {
     position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 8vh;
+    height: 5vh;
     text-align: center;
-    padding-top: 8px;
+    margin-top: 8px;
+    background-color: white;
 }
 
 .row-footer a, .row-footer span {
@@ -67,7 +89,6 @@ label {
 
 .row-footer a:hover {
     color: #333333;
-    text-decoration: none;
 }
 
 .footer-icon {
@@ -79,6 +100,16 @@ label {
     filter: opacity(100%)
 }
 
+.counter {
+    position: absolute;
+    right: 32px;
+    bottom: 0px;
+}
+
+.counter img {
+    height: 16px;
+}
+
 .footer-divisor {
     width: 2px;
 }
@@ -88,7 +119,7 @@ label {
 }
 
 .overlay {
-    display: none;
+/*    display: none;*/
     z-index: 999;
     position: absolute;
     top: 0;
@@ -97,6 +128,91 @@ label {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* */
+.row-welcome-dialog {
+/*    display: none;*/
+    z-index: 9998;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    height: 70%;
+    width: 50%;
+    background-color: white;
+    box-shadow: 8px 8px 32px #222222;
+}
+
+.col-welcome-dialog {
+    height: 100%;
+}
+
+.row-welcome-header {
+    height: 10%;
+    text-align: center;
+    background-color: #d35151;;
+    color: white;
+}
+
+.welcome-header-title {
+    margin-top: 2%;
+    font-size: 12pt;
+}
+
+.row-welcome-content {
+    height: 90%;
+    text-align: center;
+}
+
+.row-welcome-content img {
+    cursor: pointer;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.row-welcome-content p {
+    font-weight: lighter;
+    font-size: 16pt;
+}
+
+.row-welcome-video {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    height: 60%;
+    width: 85%;
+    text-align: center;
+}
+
+.welcome-video-container {
+}
+
+.welcome-video {
+    height: 100%;
+    width: 100%;
+}
+
+.row-welcome-video p {
+    font-size: 22pt;
+}
+
+.row-welcome-other {
+    position: absolute;
+    bottom: 0%;
+    left: 5%;
+    height: 30%;
+    width: 96%;
+    background-color: white;
+}
+
+.welcome-other-icon {
+    height: 30%;
+}
+
+.fb-share-button {
+    margin-top: 3%;
+}
+
+/* */
 
 .row-import-dialog {
     display: none;
@@ -136,17 +252,19 @@ label {
     text-align: center;
     margin-top: 16px;
     margin-bottom: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     background-color: #f6f6f6;
 }
 
 .icon-import-notice {
+    margin-top: -8px;
     height: 16px;
 }
 
 .label-import-notice {
     position: relative;
-    top: 2px;
-    left: 8px;
+    margin: 0;
     font-size: 9pt;
     font-style: italic;
 }
@@ -161,7 +279,7 @@ label {
 .row-import-course-container {
     overflow: auto;
     position: absolute;
-    top: 180px;
+    top: 220px;
     bottom: 96px;
     left: 16px;
     right: 48px;
@@ -262,6 +380,10 @@ label {
     font-size: 10pt;
 }
 
+.button-import:hover {
+    background: #1d8024;
+}
+
 .button-delete {
     position: absolute;
     right: 0px;
@@ -351,6 +473,9 @@ button:disabled {
     font-size: 10pt;
 }
 
+.button-generate:hover:enabled {
+    background: #b12929;
+}
 .button-reset {
     width: 40%;
     height: 32px;
@@ -547,7 +672,7 @@ td {
     position: absolute;
     top: 48px;
     left: 0;
-    height: 80%;
+    height: calc(100% - 48px);
     width: 100%;
     background-color: white;
 }

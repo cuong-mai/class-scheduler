@@ -1,6 +1,32 @@
+function showWelcomeDialog() {
+    gOverlay.show();
+}
+
+function startApp() {
+    gWelcomeDialog.hide();
+    gOverlay.hide();
+}
+
+function showCommentTooltip() {
+    $("#tooltip-comment").tooltip("show");   
+}
+
+function hideCommentTooltip() {
+    $("#tooltip-comment").tooltip("hide");   
+}
+
+function toggleCommentTooltip() {
+    showCommentTooltip();
+    setTimeout(hideCommentTooltip, 5000);
+}
+
+function stopCommentToolTip() {
+    clearInterval(gTooltipHandler);
+}
+
 function showImportDialog() {
-        gOverlay.show();
-        gImportDialog.show();
+    gOverlay.show();
+    gImportDialog.show();
 }
 
 function toggleSelectCourse() {
@@ -86,9 +112,9 @@ function toggleEnableDay() {
 }
 
 function generateSchedules() {
-    gRightPanel.hideSchedulePage(gSchedulePageOverview);
+//    gRightPanel.hideSchedulePage(gSchedulePageOverview);
     gSchedulePageResult = new SchedulePage("result", gSectionClosedInfoList, gDayDisabledList);
-    
+
     $(".row-message-loading").fadeIn(200, function () {
         gSectionCombList = combineSections(gCourseSelectedList);
         if (gSectionCombList.length > 0) {
@@ -104,8 +130,8 @@ function generateSchedules() {
             var message = new Message("noresult", "No possible schedule <br> Please enable some other sections or days");
             gSchedulePageResult.appendSchedule(message);
         }
+        $(".row-message-loading").hide();
         gRightPanel.appendSchedulePage(gSchedulePageResult);
-        $(".row-message-loading").fadeOut(200);
     });
 }
 

@@ -1,13 +1,40 @@
 <!doctype html>
 <html>
     <head>
+        <title>Class Schedule Planner - Cuong (James) Mai</title>
         <meta charset="utf-8">
-        <title>Class Schedule Planner</title>
+        <meta property="og:url"           content="http://project.cuongmai.net/schedule" />
+        <meta property="og:type"          content="website" />
+        <meta property="og:title"         content="Class Schedule Planner" />
+        <meta property="og:description"   content="Gives you the fittest schedule every term" />
+        <meta property="og:image"         content="http://project.cuongmai.net/schedule/images/app_thumbnail.jpg" />
+        
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
+
+                <!-- Google Analytics -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                                    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-103778492-1', 'auto');
+            ga('send', 'pageview');
+        </script>
     </head>
     
     <body>
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>        
+        
         <!-- Container -->
         <div class="container-fluid">
             <!-- Row Header -->
@@ -16,7 +43,20 @@
                     <img class="header-logo" src="images/logo.png" alt="logo">
                     <div class="header-text">
                         <p class="header-title">Class Schedule Planner</p>
-                        <p class="header-slogan">Select the fittest schedule for course enrollment</p>
+                        <p class="header-slogan">Gives you the fittest schedule every term</p>
+                    </div>
+                    <div class="header-icon-container">
+                        <a id="tooltip-comment" target="_blank" href="http://www.cuongmai.net/?p=58#comment" 
+                            data-toggle="tooltip" data-placement="bottom" title="Please write a review to support the development of this app. Thank you!">
+                            <img class="button-comment" src="images/icon_comment.png">
+                        </a>
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fproject.cuongmai.net%2Fschedule&amp;src=sdkpreparse">
+                            <img src="images/icon_share.png">
+                        </a>
+                        <a href="http://www.cuongmai.net/?p=58" target="_blank"><img src="images/icon_info.png"></a>
+                        <a href="http://www.cuongmai.net/?p=58" target="_blank"><img src="images/icon_help.png"></a>
+                        
+
                     </div>
                     <img class="header-background" src="images/header_background.png" alt="logo">
                 </div>
@@ -62,7 +102,7 @@
                 <div class="col-sm-9">
                     <!-- Row Right Panel -->
                     <div id="right-panel" class="row row-right-panel">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 height-100-percent">
                             <!-- Row Header of Right Panel-->
                             <div class="row header-banner-right-panel">
                                 <div class="col-sm-12">
@@ -71,20 +111,19 @@
                                     <img class="button-navigation-schedule button-navigation-schedule-forward" src="images/button_schedule_forward_disabled.png">
                                 </div>
                             </div> <!-- End of Row Header of Right Panel -->
-                            
-                            <!-- Message -->
-                            <div class="row row-message row-message-loading">
-                                <div class="col-sm-12 height-100-percent">
-                                    <div class="message-wrapper">
-                                        <div class="spinner spinner-1"></div>
-                                        <p class="message-text"> 
-                                            Generating schedules <br>
-                                            Please wait...
-                                        </p>
-                                    </div>
-                                </div>
-                            </div> 
                         </div>   
+                        <!-- Message -->
+                        <div class="row row-message row-message-loading">
+                            <div class="col-sm-12 height-100-percent">
+                                <div class="message-wrapper">
+                                    <div class="spinner spinner-1"></div>
+                                    <p class="message-text"> 
+                                        Generating schedules <br>
+                                        Please wait...
+                                    </p>
+                                </div>
+                            </div>
+                        </div> 
                     </div> <!-- End of Row Right Panel -->
                 </div>
             </div> <!-- End of Row Content -->
@@ -94,7 +133,7 @@
                 <div class="col-sm-12">
                     <div class="">
                         <a href="http://www.cuongmai.net" class="" target="_blank">
-                            <span>&copy; Cuong Mai</span>
+                            <span>&copy; Cuong (James) Mai</span>
                         </a>
                         <img class="footer-icon footer-divisor" src="images/icon_footer_divisor.png">
                         <a href="https://github.com/cuong-mai" target="_blank">
@@ -113,6 +152,15 @@
                         <a href="http://www.cuongmai.net" class="" target="_blank">
                             <span>cuongmai.net</span>
                         </a>
+                        
+                        <!-- Counter -->
+                        <div class="counter" align=center>
+                            <label>Visited: </label>
+                            <img 
+                                 src='http://www.counter12.com/img-0Wzz9xCZWdZaCdbw-3.gif' 
+                                border='0' alt='web counter free'>
+                            <script type='text/javascript' src='http://www.counter12.com/ad.js?id=0Wzz9xCZWdZaCdbw'></script>
+                        </div>
                     </div>
                 </div>
             </div> <!-- End of Row Footer -->
@@ -120,6 +168,54 @@
             <!-- Overlay -->
             <div class="overlay">
             </div> <!-- End of Overlay -->
+            
+            <!-- Row Welcome Dialog -->
+            <div class="row row-welcome-dialog">
+                <div class="col-sm-12 col-welcome-dialog">
+                    <div class="row row-welcome-header">
+                        <div class="col-sm-12 height-100-percent">
+                            <label class="welcome-header-title">Welcome to Class Schedule Planner</label>
+                        </div>
+                    </div>    
+                    <div class="row row-welcome-content">
+                        <div class="col-sm-12 height-100-percent">
+                            <div class="row row-welcome-video">
+                                <div class="welcome-video-container">
+                                    <iframe class="welcome-video" 
+                                            src="https://www.youtube.com/embed/u_WXu7n9v3s"
+                                        frameborder="0" allowfullscreen align="center">
+                                        Video is loading...
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="row row-welcome-other">
+                                <div class="col-sm-3 height-100-percent">
+                                    <img class="button-start welcome-other-icon" src="images/icon_start_red.png">
+                                    <p>Start App</p>
+                                </div>
+                                <div class="col-sm-3 height-100-percent">
+                                    <a target="_blank" href="http://www.cuongmai.net/?p=58">
+                                        <img class="welcome-other-icon" src="images/icon_info_red.png">
+                                    </a>
+                                    <p>About</p>
+                                </div>
+                                <div class="col-sm-3 height-100-percent">
+                                    <a target="_blank" href="http://www.cuongmai.net/?p=58#comment">
+                                        <img class="welcome-other-icon button-comment" src="images/icon_comment_red.png">
+                                    </a>
+                                    <p>Review</p>
+                                </div>
+                                <div class="col-sm-3 height-100-percent">
+                                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fproject.cuongmai.net%2Fschedule&amp;src=sdkpreparse">
+                                        <img class="welcome-other-icon" src="images/icon_share_red.png">
+                                    </a>
+                                    <p>Share</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <!-- Row Import Dialog -->
             <div class="row row-import-dialog">
@@ -132,7 +228,16 @@
                     <div class="row row-import-content row-import-info">
                         <div class="col-sm-12">
                             <img class="icon-import-notice" src="images/icon_notice.png">
-                            <label class="label-import-notice">For official information, please refer to your institution's website.</label>
+                            <label class="label-import-notice">
+                                Data for this app is imported manually, based on information on the institutions'
+                                enrollment system.
+                            </label>
+                            <p class="label-import-notice">
+                                For official data, please visit to your institution's website.
+                            </p>
+                            <p class="label-import-notice">
+                                Data for Fall 2017 is coming soon!
+                            </p>
                         </div>
                     </div>
                     <div class="row row-import-content">
@@ -165,7 +270,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <select class="select-import">
-                                        <option>Fall 2017</option>
+                                        <option>Summer 2017</option>
                                     </select>
                                 </div>
                             </div>
@@ -183,7 +288,7 @@
                     </div>
                     <div class="row row-import-content row-import-info">
                         <div class="col-sm-12">
-                            <label >Courses in database:</label>
+                            <label >Courses:</label>
                         </div>
                     </div>
                     <div class="row row-import-content row-import-course-container">
@@ -216,6 +321,7 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/data.js"></script>
         <script src="js/settings.js"></script>
+        <script src="js/WelcomeDialog.js"></script>
         <script src="js/Message.js"></script>
         <script src="js/Overlay.js"></script>
         <script src="js/Class.js"></script>
