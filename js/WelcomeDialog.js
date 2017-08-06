@@ -34,12 +34,16 @@ class WelcomeDialog {
         
         marginTop = (parentHeight - height) / 2;
         marginLeft = (parentWidth - width) / 2;
-
+        
         $welcomeVideoContainer.css({
             "height": height + "px",    
             "width": width + "px",
             "margin-top": marginTop + "px",
             "margin-left": marginLeft + "px"
         });
+    }
+    
+    stopVideo() {
+        this.$viewElement.find("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
     }
 }

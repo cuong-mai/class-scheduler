@@ -3,6 +3,7 @@ function showWelcomeDialog() {
 }
 
 function startApp() {
+    gWelcomeDialog.stopVideo();
     gWelcomeDialog.hide();
     gOverlay.hide();
 }
