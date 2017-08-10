@@ -32,7 +32,7 @@ a:hover {
 .header-text {
     display: inline-table;
     text-align: center;
-    margin-left: 32px;
+    margin-left: 2%;
 }
 
 .header-text p {
@@ -148,14 +148,34 @@ a:hover {
 
 .row-welcome-header {
     height: 10%;
+    padding-top: 1%;
     text-align: center;
     background-color: #d35151;;
     color: white;
 }
 
+.welcome-header-logo {
+    padding-top: 6px;
+    width: 32px;
+}
+
+.welcome-header-text-container {
+    display: inline-table;
+    margin-left: 16px;
+}
+
+.welcome-header-text-container p {
+    margin-top: -4px;
+    margin-bottom: 0;
+    color: white;
+}
+
 .welcome-header-title {
-    margin-top: 2%;
     font-size: 12pt;
+}
+
+.welcome-header-author {
+    font-size: 8pt;
 }
 
 .row-welcome-content {
@@ -292,6 +312,14 @@ a:hover {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0px;
+}
+
+.table-import-col-section {
+    width: 20%;
+}
+
+.table-import-col-note {
+    width: 30%;
 }
 
 .table-import td {

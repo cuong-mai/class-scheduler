@@ -12,7 +12,9 @@ var gSchedulePageOverview;
 var gSchedulePageResult;
 var gScheduleOverview;
 var gScheduleResultList = new Array();
-var gCurrentTermData;
+var gCurrentInsitutionIndex = 0;
+var gCurrentProgramIndex = 0;
+var gCurrentTermIndex = 0;
 var gCourseList = [];
 var gCourseSelectedList = [];
 var gCourseSelectedListTemp = [];
@@ -24,18 +26,17 @@ $(document).ready(function () {
 });
 
 function init() {
+    
     $("#tooltip-comment").tooltip();   
     gTooltipHandler = setInterval(toggleCommentTooltip, 180000);
-
-    gCurrentTermData = data.termList[0];
     
     gOverlay = new Overlay();
     gOverlay.show();
-
+    
     gWelcomeDialog = new WelcomeDialog();
     gWelcomeDialog.show();
-
-    gImportDialog = new ImportDialog();
+    
+    gImportDialog = new ImportDialog(data);
     
     gRightPanel = new RightPanel();
     gSchedulePageOverview = new SchedulePage("overview", gSectionClosedInfoList, gDayDisabledList);
@@ -51,12 +52,8 @@ function init() {
         gCourseContainer.appendCourse(emptyCourse);
     }
     
-    for (var i = 0; i < gCurrentTermData.courseList.length; i++) {
-        var courseData = gCurrentTermData.courseList[i];
-        var newCourse = new Course(courseData);
-        gCourseList.push(newCourse);
-        gImportDialog.appendCourse(newCourse);
-    }
+    loadData(gCurrentInsitutionIndex, gCurrentProgramIndex, gCurrentTermIndex);
+    gImportDialog.setCourseList(gCourseList);
 }
 
 function assignEvents() {

@@ -15,8 +15,8 @@ class Course {
                 '<td><input type="checkbox" class="checkbox-import"></td>' +
                 '<td>' + this.courseData.code + '</td>' +
                 '<td>' + this.courseData.name + '</td>' +
-                '<td>'+ numberOfSections + ' sections offered</td>' +
-                '<td>Required for: ' + this.courseData.requiredTerm + ' term</td>' +
+                '<td class="table-import-col-section">'+ numberOfSections + ' sections offered</td>' +
+                '<td class="table-import-col-note">' + this.courseData.note + '</td>' +
             '</tr>'
         ));
         

@@ -24,7 +24,7 @@ class Section {
                 '</td>' +
                 '<td class="td-import-section">' +
                     '<div id="" class="accordian-body collapse section-of-' + this.courseCode + '">' +
-                        this.sectionData.code + ' (' + this.sectionData.teacher + ') ' +
+                        this.sectionData.code + ' - ' + this.sectionData.teacher +
                     '</div>' +
                 '</td>' +
             '</tr>'
@@ -119,7 +119,7 @@ class Section {
     close() {
         this.isOpen = false;
         this.$viewElement.children().css({
-            "filter": "opacity(40%)"
+            "filter": "opacity(25%)"
         });
         for (var i = 0; i < this.classList.length; i++) {
             var currentClass = this.classList[i];

@@ -1,5 +1,5 @@
 // Day, Time
-var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 var NUM_DAYS_PER_WEEK = DAYS_OF_WEEK.length;
 var MIN_TIME = "08:00";
 var MAX_TIME = "18:00";

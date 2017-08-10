@@ -8,6 +8,16 @@ function startApp() {
     gOverlay.hide();
 }
 
+function loadData(institutionIndex_, programIndex_, termIndex_) {
+    gCourseList = [];
+    var currentTermData = data.institutionList[institutionIndex_].programList[programIndex_].termList[termIndex_];
+    for (var i = 0; i < currentTermData.courseList.length; i++) {
+        var currentCourseData = currentTermData.courseList[i];
+        var newCourse = new Course(currentCourseData);
+        gCourseList.push(newCourse);
+    }
+} 
+
 function showCommentTooltip() {
     $("#tooltip-comment").tooltip("show");   
 }
@@ -28,6 +38,18 @@ function stopCommentToolTip() {
 function showImportDialog() {
     gOverlay.show();
     gImportDialog.show();
+}
+
+function setProgram() {
+    var thisImportDialog = this;
+    gCourseSelectedListTemp = [];
+    gCurrentProgramIndex = thisImportDialog.$dialogElement.find(".select-program option:selected").index();
+    
+    thisImportDialog.loadTerm(data.institutionList[gCurrentInsitutionIndex].programList[gCurrentProgramIndex]);
+    
+    loadData(gCurrentInsitutionIndex, gCurrentProgramIndex, 0);
+    
+    thisImportDialog.setCourseList(gCourseList);
 }
 
 function toggleSelectCourse() {

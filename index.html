@@ -11,8 +11,8 @@
         
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
-
-                <!-- Google Analytics -->
+        
+        <!-- Google Analytics -->
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,7 +24,7 @@
     </head>
     
     <body>
-        <!-- Load Facebook SDK for JavaScript -->
+        <!-- Facebook SDK for JavaScript -->
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
@@ -37,6 +37,160 @@
         
         <!-- Container -->
         <div class="container-fluid">
+            <!-- Overlay -->
+            <div class="overlay">
+            </div> <!-- End of Overlay -->
+            
+            <!-- Row Import Dialog -->
+            <div class="row row-import-dialog">
+                <div class="col-sm-12 col-import-dialog">
+                    <div class="row row-import-header">
+                        <div class="col-sm-12">
+                            <label class="import-header-title">Select courses you want to enroll</label>
+                        </div>
+                    </div>    
+                    <div class="row row-import-content row-import-info">
+                        <div class="col-sm-12">
+                            <img class="icon-import-notice" src="images/icon_notice.png">
+                            <label class="label-import-notice">
+                                Data for this app is imported manually, based on information on the institutions'
+                                enrollment system.
+                            </label>
+                            <p class="label-import-notice">
+                                For official data, please visit to your institution's website.
+                            </p>
+                            <p class="label-import-notice">
+                                The numbers beside the teachers' names are ratings from ratemyprofessors.com, used as reference only.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row row-import-content">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="">Institution:</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select class="select-import select-institution">
+<!--                                        <option>Seneca College</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="">Program:</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select class="select-import select-program">
+<!--                                        <option>CPA/CPD</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="">Term:</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select class="select-import select-term">
+<!--                                        <option>Fall 2017</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label class="">Sort by:</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <select class="select-import">
+                                        <option>Level</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-import-content row-import-info">
+                        <div class="col-sm-12">
+                            <label >Courses:</label>
+                        </div>
+                    </div>
+                    <div class="row row-import-content row-import-course-container">
+                        <div class="col-sm-12">
+                            <table class="table-import">
+                                <thead>
+                                </thead> 
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                    <div class="row row-button-import-dialog">
+                        <div class="col-sm-3">
+                        </div>   
+                        <div class="col-sm-3">
+                            <button id="button-import-ok" class="button-import">Import</button>
+                        </div>    
+                        <div class="col-sm-3">
+                            <button id="button-import-cancel" class="button-import">Cancel</button>
+                        </div>    
+                        <div class="col-sm-3">
+                        </div>   
+                    </div>   
+                </div>
+            </div> <!-- End of Row Import Dialog -->             
+            
+            <!-- Row Welcome Dialog -->
+            <div class="row row-welcome-dialog">
+                <div class="col-sm-12 col-welcome-dialog">
+                    <div class="row row-welcome-header">
+                        <div class="col-sm-12 height-100-percent">
+                            <img class="welcome-header-logo" src="images/logo.png" alt="logo">
+                            <div class="welcome-header-text-container">
+                                <p class="welcome-header-title">Welcome to Class Schedule Planner</p>
+                                <p class="welcome-header-author">by Cuong Mai</p>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="row row-welcome-content">
+                        <div class="col-sm-12 height-100-percent">
+                            <div class="row row-welcome-video">
+                                <div class="welcome-video-container">
+                                    <iframe class="welcome-video" 
+                                            src="https://www.youtube.com/embed/fGyS2H6uLJk?enablejsapi=1"
+                                            frameborder="0" allowfullscreen align="center">
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="row row-welcome-other">
+                                <div class="col-sm-3 height-100-percent">
+                                    <img class="button-start welcome-other-icon" src="images/icon_start_red.png">
+                                    <p>Start App</p>
+                                </div>
+                                <div class="col-sm-3 height-100-percent">
+                                    <a target="_blank" href="http://www.cuongmai.net/?p=58">
+                                        <img class="welcome-other-icon" src="images/icon_info_red.png">
+                                    </a>
+                                    <p>About</p>
+                                </div>
+                                <div class="col-sm-3 height-100-percent">
+                                    <a target="_blank" href="http://www.cuongmai.net/?p=58#comment">
+                                        <img class="welcome-other-icon button-comment" src="images/icon_comment_red.png">
+                                    </a>
+                                    <p>Review</p>
+                                </div>
+                                <div class="col-sm-3 height-100-percent">
+                                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fproject.cuongmai.net%2Fschedule&amp;src=sdkpreparse">
+                                        <img class="welcome-other-icon" src="images/icon_share_red.png">
+                                    </a>
+                                    <p>Share</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End of Row Welcome Dialog -->
+            
             <!-- Row Header -->
             <div class="row row-header">
                 <div class="col-sm-12">
@@ -164,157 +318,6 @@
                     </div>
                 </div>
             </div> <!-- End of Row Footer -->
-            
-            <!-- Overlay -->
-            <div class="overlay">
-            </div> <!-- End of Overlay -->
-            
-            <!-- Row Welcome Dialog -->
-            <div class="row row-welcome-dialog">
-                <div class="col-sm-12 col-welcome-dialog">
-                    <div class="row row-welcome-header">
-                        <div class="col-sm-12 height-100-percent">
-                            <label class="welcome-header-title">Welcome to Class Schedule Planner</label>
-                        </div>
-                    </div>    
-                    <div class="row row-welcome-content">
-                        <div class="col-sm-12 height-100-percent">
-                            <div class="row row-welcome-video">
-                                <div class="welcome-video-container">
-                                    <iframe class="welcome-video" 
-                                            src="https://www.youtube.com/embed/fGyS2H6uLJk?enablejsapi=1"
-                                        frameborder="0" allowfullscreen align="center">
-                                        Video is loading...
-                                    </iframe>
-                                </div>
-                            </div>
-                            <div class="row row-welcome-other">
-                                <div class="col-sm-3 height-100-percent">
-                                    <img class="button-start welcome-other-icon" src="images/icon_start_red.png">
-                                    <p>Start App</p>
-                                </div>
-                                <div class="col-sm-3 height-100-percent">
-                                    <a target="_blank" href="http://www.cuongmai.net/?p=58">
-                                        <img class="welcome-other-icon" src="images/icon_info_red.png">
-                                    </a>
-                                    <p>About</p>
-                                </div>
-                                <div class="col-sm-3 height-100-percent">
-                                    <a target="_blank" href="http://www.cuongmai.net/?p=58#comment">
-                                        <img class="welcome-other-icon button-comment" src="images/icon_comment_red.png">
-                                    </a>
-                                    <p>Review</p>
-                                </div>
-                                <div class="col-sm-3 height-100-percent">
-                                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fproject.cuongmai.net%2Fschedule&amp;src=sdkpreparse">
-                                        <img class="welcome-other-icon" src="images/icon_share_red.png">
-                                    </a>
-                                    <p>Share</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Row Import Dialog -->
-            <div class="row row-import-dialog">
-                <div class="col-sm-12 col-import-dialog">
-                    <div class="row row-import-header">
-                        <div class="col-sm-12">
-                            <label class="import-header-title">Select courses you want to enroll</label>
-                        </div>
-                    </div>    
-                    <div class="row row-import-content row-import-info">
-                        <div class="col-sm-12">
-                            <img class="icon-import-notice" src="images/icon_notice.png">
-                            <label class="label-import-notice">
-                                Data for this app is imported manually, based on information on the institutions'
-                                enrollment system.
-                            </label>
-                            <p class="label-import-notice">
-                                For official data, please visit to your institution's website.
-                            </p>
-                            <p class="label-import-notice">
-                                Data for Fall 2017 is coming soon!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row row-import-content">
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label class="">Institution:</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <select class="select-import">
-                                        <option>Seneca College</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label class="">Program:</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <select class="select-import">
-                                        <option>CPA/CPD</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label class="">Term:</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <select class="select-import">
-                                        <option>Summer 2017</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label class="">Sort by:</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <select class="select-import">
-                                        <option>Level</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-import-content row-import-info">
-                        <div class="col-sm-12">
-                            <label >Courses:</label>
-                        </div>
-                    </div>
-                    <div class="row row-import-content row-import-course-container">
-                        <div class="col-sm-12">
-                            <table class="table-import">
-                                <thead>
-                                </thead> 
-                                <tbody>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div> 
-                        <div class="row row-button-import-dialog">
-                            <div class="col-sm-3">
-                            </div>   
-                            <div class="col-sm-3">
-                                <button id="button-import-ok" class="button-import">Import</button>
-                            </div>    
-                            <div class="col-sm-3">
-                                <button id="button-import-cancel" class="button-import">Cancel</button>
-                            </div>    
-                            <div class="col-sm-3">
-                            </div>   
-                    </div>   
-                </div>
-            </div> <!-- End of Row Import Dialog -->             
         </div> <!-- End of Container -->   
         
         <script src="js/jquery-3.2.1.min.js"></script>
