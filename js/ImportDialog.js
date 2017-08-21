@@ -6,6 +6,7 @@ class ImportDialog {
         
         this.$dialogElement = $(".row-import-dialog");
         
+        this.$dialogElement.find(".label-import-updated").text("Data updated on: " + this.data.updated);
         
         this.$courseContainerElement = this.$dialogElement.find(".row-import-course-container");
         
