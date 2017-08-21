@@ -2,7 +2,7 @@
 var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 var NUM_DAYS_PER_WEEK = DAYS_OF_WEEK.length;
 var MIN_TIME = "08:00";
-var MAX_TIME = "18:00";
+var MAX_TIME = "19:00";
 
 // Types of Schedule
 var SCHEDULE_OVERVIEW_TYPE = "overview";
