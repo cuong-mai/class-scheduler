@@ -1,5 +1,6 @@
 var data = 
 {
+    "updated": "2017-08-20 @ 6:30pm",
     "institutionList":
     [
         {
@@ -506,6 +507,25 @@ var data =
                                             ],
                                             "color": "#04275e"
                                         } // End of Section SDD
+                                        ,
+                                        { // Start of Section SEE
+                                            "code": "SEE",
+                                            "teacher": "Ayesha Manzer (2.5)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                },
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#042733"
+                                        } // End of Section SEE
                                     ], // End of Section List
                                     "note": "Required (3rd term). SAB-LEC = SAA + SBB"
                                 } // End of Course DBS301
@@ -590,6 +610,25 @@ var data =
                                             ],
                                             "color": "#770303"
                                         } // End of Section SDD
+                                        ,
+                                        { // Start of Section SEE
+                                            "code": "SEE",
+                                            "teacher": "To be determined",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "15:15"
+                                                },
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#772424"
+                                        } // End of Section SEE
                                     ], // End of Section List
                                     "note": "Required (3rd term). SAB-LEC = SAA + SBB"
                                 } // End of Course OOP345
@@ -674,6 +713,25 @@ var data =
                                             ],
                                             "color": "#005100"
                                         } // End of Section SDD
+                                        ,
+                                        { // Start of Section SEE
+                                            "code": "SEE",
+                                            "teacher": "Marc Gurwitz (2.7)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "15:20",
+                                                    "endTime": "17:05"
+                                                },
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#003300"
+                                        } // End of Section SEE
                                     ], // End of Section List
                                     "note": "Required (3rd term)"
                                 } // End of Course SYS366                
@@ -758,6 +816,25 @@ var data =
                                             ],
                                             "color": "#494f02"
                                         } // End of Section SDD
+                                        ,
+                                        { // Start of Section SEE
+                                            "code": "SEE",
+                                            "teacher": "To be determined",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "08:00",
+                                                    "endTime": "09:45"
+                                                },
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "08:00",
+                                                    "endTime": "09:45"
+                                                }
+                                            ],
+                                            "color": "#333302"
+                                        } // End of Section SEE
                                     ], // End of Section List
                                     "note": "Required (3rd term)"
                                 } // End of Course WEB322                
@@ -1134,7 +1211,7 @@ var data =
                                                     "endTime": "16:10"
                                                 }
                                             ],
-                                            "color": "#0061ff"
+                                            "color": "#359cfb"
                                         } // End of Section NAA
                                         ,
                                         { // Start of Section NBB
@@ -1148,7 +1225,7 @@ var data =
                                                     "endTime": "12:30"
                                                 }
                                             ],
-                                            "color": "#054bbc"
+                                            "color": "#67beff"
                                         } // End of Section NBB
                                         ,
                                         { // Start of Section NCC
@@ -1162,7 +1239,7 @@ var data =
                                                     "endTime": "14:20"
                                                 }
                                             ],
-                                            "color": "#033482"
+                                            "color": "#39b4ff"
                                         } // End of Section NCC
                                         ,
                                         { // Start of Section NDD
@@ -1176,7 +1253,7 @@ var data =
                                                     "endTime": "14:20"
                                                 }
                                             ],
-                                            "color": "#04275e"
+                                            "color": "#598eff"
                                         } // End of Section NDD
                                         ,
                                         { // Start of Section NEE
@@ -1190,10 +1267,374 @@ var data =
                                                     "endTime": "14:20"
                                                 }
                                             ],
-                                            "color": "#021128"
+                                            "color": "#56aeff"
                                         } // End of Section NEE                    
+                                        ,
+                                        { // Start of Section NII
+                                            "code": "NII",
+                                            "teacher": "Hyacinth Randall (2.3)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "08:00",
+                                                    "endTime": "10:40"
+                                                }
+                                            ],
+                                            "color": "#657d8b"
+                                        } // End of Section NII                    
+                                        ,
+                                        { // Start of Section NJJ
+                                            "code": "NJJ",
+                                            "teacher": "Keith Hebblewhite (4.5)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "14:25",
+                                                    "endTime": "17:05"
+                                                }
+                                            ],
+                                            "color": "#527ba1"
+                                        } // End of Section NJJ                    
+                                        ,
+                                        { // Start of Section NKK
+                                            "code": "NKK",
+                                            "teacher": "Tisha King (4.3)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "16:10"
+                                                }
+                                            ],
+                                            "color": "#2f6f96"
+                                        } // End of Section NKK                    
+                                        ,
+                                        { // Start of Section NLL
+                                            "code": "NLL",
+                                            "teacher": "David King (4.9)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#185287"
+                                        } // End of Section NLL                    
+                                        ,
+                                        { // Start of Section NMM
+                                            "code": "NMM",
+                                            "teacher": "Jeff Mccartney ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "12:30"
+                                                }
+                                            ],
+                                            "color": "#184d67"
+                                        } // End of Section NMM                    
+                                        ,
+                                        { // Start of Section NMS
+                                            "code": "NMS",
+                                            "teacher": "Domenic Gasparro ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "08:00",
+                                                    "endTime": "10:40"
+                                                }
+                                            ],
+                                            "color": "#111346"
+                                        } // End of Section NMS                    
+                                        ,
+                                        { // Start of Section NMT
+                                            "code": "NMT",
+                                            "teacher": "Jared Breski (4.8)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "08:00",
+                                                    "endTime": "10:40"
+                                                }
+                                            ],
+                                            "color": "#171d69"
+                                        } // End of Section NMT                    
+                                        ,
+                                        { // Start of Section NMU
+                                            "code": "NMU",
+                                            "teacher": "Jared Breski (4.8)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#21268b"
+                                        } // End of Section NMU                    
+                                        ,
+                                        { // Start of Section NMV
+                                            "code": "NMV",
+                                            "teacher": "Nancy Bodi (4.5)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "15:20",
+                                                    "endTime": "18:00"
+                                                }
+                                            ],
+                                            "color": "#809df8"
+                                        } // End of Section NMV                    
+                                        ,
+                                        { // Start of Section NNN
+                                            "code": "NNN",
+                                            "teacher": "Ryan Laverty ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "16:10"
+                                                }
+                                            ],
+                                            "color": "#4c74c9"
+                                        } // End of Section NNN                    
+                                        ,
+                                        { // Start of Section NOO
+                                            "code": "NOO",
+                                            "teacher": "Jeff Maccartney ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "16:10"
+                                                }
+                                            ],
+                                            "color": "#628dd6"
+                                        } // End of Section NOO                    
+                                        ,
+                                        { // Start of Section NUU
+                                            "code": "NUU",
+                                            "teacher": "Jane Haddad (3.7)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "16:10"
+                                                }
+                                            ],
+                                            "color": "#7ba4dd"
+                                        } // End of Section NUU                    
+                                        ,
+                                        { // Start of Section NVV
+                                            "code": "NVV",
+                                            "teacher": "Jeffery Potvin (4.7)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "08:55",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#5d63c3"
+                                        } // End of Section NVV                    
+                                        ,
+                                        { // Start of Section NWW
+                                            "code": "NWW",
+                                            "teacher": "Tina Pressman (3.3)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "15:20",
+                                                    "endTime": "18:00"
+                                                }
+                                            ],
+                                            "color": "#16377e"
+                                        } // End of Section NWW                    
+                                        ,
+                                        { // Start of Section NXX
+                                            "code": "NXX",
+                                            "teacher": "Andrea Rennie (3.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "12:30"
+                                                }
+                                            ],
+                                            "color": "#3a20b0"
+                                        } // End of Section NXX                    
+                                        ,
+                                        { // Start of Section NYY
+                                            "code": "NYY",
+                                            "teacher": "Carlos Fernandez (2.4)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "08:55",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#1d27b8"
+                                        } // End of Section NYY                    
+                                        ,
+                                        { // Start of Section NZE
+                                            "code": "NZE",
+                                            "teacher": "Leslie Macintosh (4.6)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "14:25",
+                                                    "endTime": "17:05"
+                                                }
+                                            ],
+                                            "color": "#3328a7"
+                                        } // End of Section NZE                    
+                                        ,
+                                        { // Start of Section NZG
+                                            "code": "NZG",
+                                            "teacher": "David King (4.3)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "10:45",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#9932cc"
+                                        } // End of Section NZG                    
+                                        ,
+                                        { // Start of Section NZH
+                                            "code": "NZH",
+                                            "teacher": "Leslie Macintosh (4.6)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "14:25",
+                                                    "endTime": "17:05"
+                                                }
+                                            ],
+                                            "color": "#8b008b"
+                                        } // End of Section NZH                    
+                                        ,
+                                        { // Start of Section NZM
+                                            "code": "NZM",
+                                            "teacher": "Hyancinth Randall ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#4b0082"
+                                        } // End of Section NZM                    
+                                        ,
+                                        { // Start of Section NZN
+                                            "code": "NZN",
+                                            "teacher": "Al Ruggero (4.7)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "16:10"
+                                                }
+                                            ],
+                                            "color": "#a385d4"
+                                        } // End of Section NZN                    
+                                        ,
+                                        { // Start of Section NZQ
+                                            "code": "NZQ",
+                                            "teacher": "Keith Hebblewhite (4.5)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "14:20"
+                                                }
+                                            ],
+                                            "color": "#9573cc"
+                                        } // End of Section NZQ                    
+                                        ,
+                                        { // Start of Section NZX
+                                            "code": "NZX",
+                                            "teacher": "Bill Singha (4.6)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "14:20"
+                                                }
+                                            ],
+                                            "color": "#7b59c1"
+                                        } // End of Section NZX                    
+                                        ,
+                                        { // Start of Section NZZ
+                                            "code": "NZZ",
+                                            "teacher": "Carlos Fernandez (2.4)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "10:45",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#6e48ba"
+                                        } // End of Section NZZ                    
+                                        ,
+                                        { // Start of Section MMS
+                                            "code": "MMS",
+                                            "teacher": "William Richardson (5.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "12:30"
+                                                }
+                                            ],
+                                            "color": "#5c37a5"
+                                        } // End of Section MMS                    
+                                        ,
+                                        { // Start of Section MMT
+                                            "code": "MMT",
+                                            "teacher": "William Richardson (5.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "16:10"
+                                                }
+                                            ],
+                                            "color": "#4b2694"
+                                        } // End of Section MMS                    
                                     ], // End of Section List
-                                    "note": "Required (1st term)"
+                                    "note": "Required (1st term). NFF, NZW are online and not included here"
                                 } // End of course BAM101
                                 ,
                                 { // Start of Course ISC100
@@ -1270,6 +1711,454 @@ var data =
                                             ],
                                             "color": "#002200"
                                         } // End of Section NEE
+                                        ,
+                                        { // Start of Section NFF
+                                            "code": "NFF",
+                                            "teacher": "Sidonie Bell (2.8)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#9dbd7f"
+                                        } // End of Section NFF
+                                        ,
+                                        { // Start of Section NII
+                                            "code": "NII",
+                                            "teacher": "Jessica Clough ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#38d620"
+                                        } // End of Section NII
+                                        ,
+                                        { // Start of Section NJJ
+                                            "code": "NJJ",
+                                            "teacher": "Jessica Clough ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#10a328"
+                                        } // End of Section NJJ
+                                        ,
+                                        { // Start of Section NKK
+                                            "code": "NKK",
+                                            "teacher": "Jessica Clough ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#00b60d"
+                                        } // End of Section NKK
+                                        ,
+                                        { // Start of Section NLL
+                                            "code": "NLL",
+                                            "teacher": "Sangeeta Bhatnagar (4.2)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#56e12c"
+                                        } // End of Section NLL
+                                        ,
+                                        { // Start of Section NMM
+                                            "code": "NMM",
+                                            "teacher": "Amanda Clare ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "08:00",
+                                                    "endTime": "09:45"
+                                                }
+                                            ],
+                                            "color": "#136d15"
+                                        } // End of Section NMM
+                                        ,
+                                        { // Start of Section NMS
+                                            "code": "NMS",
+                                            "teacher": "Nadia Bedok (2.9)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#117c13"
+                                        } // End of Section NMS
+                                        ,
+                                        { // Start of Section NMT
+                                            "code": "NMT",
+                                            "teacher": "Jared Breski (4.8)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#138510"
+                                        } // End of Section NMT
+                                        ,
+                                        { // Start of Section NMU
+                                            "code": "NMU",
+                                            "teacher": "Domenic Gasparro ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#268b07"
+                                        } // End of Section NMU
+                                        ,
+                                        { // Start of Section NNN
+                                            "code": "NNN",
+                                            "teacher": "Denise Williams (4.6)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "17:10",
+                                                    "endTime": "18:55"
+                                                }
+                                            ],
+                                            "color": "#41980a"
+                                        } // End of Section NNN
+                                        ,
+                                        { // Start of Section NOO
+                                            "code": "NOO",
+                                            "teacher": "Denise Williams (4.6)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "17:10",
+                                                    "endTime": "18:55"
+                                                }
+                                            ],
+                                            "color": "#45904a"
+                                        } // End of Section NOO
+                                        ,
+                                        { // Start of Section NSS
+                                            "code": "NSS",
+                                            "teacher": "Elaine Nethery (5.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "14:20"
+                                                }
+                                            ],
+                                            "color": "#68ae66"
+                                        } // End of Section NSS
+                                        ,
+                                        { // Start of Section NTT
+                                            "code": "NTT",
+                                            "teacher": "Elaine Nethery (5.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "10:45",
+                                                    "endTime": "12:30"
+                                                }
+                                            ],
+                                            "color": "#84b87c"
+                                        } // End of Section NTT
+                                        ,
+                                        { // Start of Section NUU
+                                            "code": "NUU",
+                                            "teacher": "Eileen Albert (4.4)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "14:20"
+                                                }
+                                            ],
+                                            "color": "#badda4"
+                                        } // End of Section NUU
+                                        ,
+                                        { // Start of Section NVV
+                                            "code": "NVV",
+                                            "teacher": "Hedy Chase-Rattner (2.5)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "14:20"
+                                                }
+                                            ],
+                                            "color": "#596f39"
+                                        } // End of Section NVV
+                                        ,
+                                        { // Start of Section NWW
+                                            "code": "NWW",
+                                            "teacher": "Michael Hatton (5.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "14:20"
+                                                }
+                                            ],
+                                            "color": "#7f9a58"
+                                        } // End of Section NWW
+                                        ,
+                                        { // Start of Section NXX
+                                            "code": "NXX",
+                                            "teacher": "Sidonie Bell (2.8)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#a2c176"
+                                        } // End of Section NXX
+                                        ,
+                                        { // Start of Section NYY
+                                            "code": "NYY",
+                                            "teacher": "Sidonie Bell (2.8)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#bcd478"
+                                        } // End of Section NYY
+                                        ,
+                                        { // Start of Section NZA
+                                            "code": "NZA",
+                                            "teacher": "Sidonie Bell (2.8)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#d9dfad"
+                                        } // End of Section NZA
+                                        ,
+                                        { // Start of Section NZB
+                                            "code": "NZB",
+                                            "teacher": "To be determined",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "10:45",
+                                                    "endTime": "12:30"
+                                                }
+                                            ],
+                                            "color": "#4d6a67"
+                                        } // End of Section NZB
+                                        ,
+                                        { // Start of Section NZC
+                                            "code": "NZC",
+                                            "teacher": "To be determined",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "14:20"
+                                                }
+                                            ],
+                                            "color": "#749079"
+                                        } // End of Section NZC
+                                        ,
+                                        { // Start of Section NZE
+                                            "code": "NZE",
+                                            "teacher": "Kamini Sahadeo (4.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "13:30",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#a7cead"
+                                        } // End of Section NZE
+                                        ,
+                                        { // Start of Section NZG
+                                            "code": "NZG",
+                                            "teacher": "Kamini Sahadeo (4.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#cbe3cd"
+                                        } // End of Section NZG
+                                        ,
+                                        { // Start of Section NZM
+                                            "code": "NZM",
+                                            "teacher": "Kamini Sahadeo (4.0)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#007549"
+                                        } // End of Section NZM
+                                        ,
+                                        { // Start of Section NZQ
+                                            "code": "NZQ",
+                                            "teacher": "William Mcelheron ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "17:10",
+                                                    "endTime": "18:55"
+                                                }
+                                            ],
+                                            "color": "#007d4c"
+                                        } // End of Section NZQ
+                                        ,
+                                        { // Start of Section NZW
+                                            "code": "NZW",
+                                            "teacher": "To be determined",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#73de9e"
+                                        } // End of Section NZW
+                                        ,
+                                        { // Start of Section NZX
+                                            "code": "NZX",
+                                            "teacher": "To be determined",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "10:45",
+                                                    "endTime": "12:30"
+                                                }
+                                            ],
+                                            "color": "#54897d"
+                                        } // End of Section NZX
+                                        ,
+                                        { // Start of Section MCA
+                                            "code": "MCA",
+                                            "teacher": "Donna Geary (4.4)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#599083"
+                                        } // End of Section MCA
+                                        ,
+                                        { // Start of Section MCB
+                                            "code": "MCB",
+                                            "teacher": "Domenic Gasparro ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#619a8d"
+                                        } // End of Section MCB
+                                        ,
+                                        { // Start of Section MMS
+                                            "code": "MMS",
+                                            "teacher": "Nadia Bedok (2.9)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#6ba99b"
+                                        } // End of Section MMS
+                                        ,
+                                        { // Start of Section MMT
+                                            "code": "MMT",
+                                            "teacher": "Nadia Bedok (2.9)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#76b8a9"
+                                        } // End of Section MMT
+                                        ,
+                                        { // Start of Section SDC
+                                            "code": "SDC",
+                                            "teacher": "To be determined",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "12:35",
+                                                    "endTime": "15:15"
+                                                }
+                                            ],
+                                            "color": "#5cd0a4"
+                                        } // End of Section SDC
                                     ],
                                     "note": "Required (1st term)"
                                 } // End of Course ISC100
@@ -1373,6 +2262,25 @@ var data =
                                             ],
                                             "color": "#440303"
                                         } // End of Section MMS
+                                        ,
+                                        { // Start of Section MMT
+                                            "code": "MMT",
+                                            "teacher": "William Richardson ()",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "15:20",
+                                                    "endTime": "17:05"
+                                                },
+                                                {
+                                                    "dayOfWeek": "Thursday",
+                                                    "startTime": "08:00",
+                                                    "endTime": "09:45"
+                                                }
+                                            ],
+                                            "color": "#880303"
+                                        } // End of Section MMT
                                     ], // End of Section List
                                     "note": "Required (1st term)"
                                 } // End of Course MRK106
@@ -1450,7 +2358,105 @@ var data =
                                                 }
                                             ],
                                             "color": "#497f62"
-                                        } // End of Section SEE
+                                        } // End of Section NMW
+                                        ,
+                                        { // Start of Section NMX
+                                            "code": "NMX",
+                                            "teacher": "Scott Waites (3.3)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Friday",
+                                                    "startTime": "15:20",
+                                                    "endTime": "17:05"
+                                                }
+                                            ],
+                                            "color": "#00dadf"
+                                        } // End of Section NMX
+                                        ,
+                                        { // Start of Section MCA
+                                            "code": "MCA",
+                                            "teacher": "Christopher De Corneille (3.5)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "16:15",
+                                                    "endTime": "18:00"
+                                                }
+                                            ],
+                                            "color": "#00a9ae"
+                                        } // End of Section MCA
+                                        ,
+                                        { // Start of Section MCB
+                                            "code": "MCB",
+                                            "teacher": "Christopher De Corneille (3.5)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "14:25",
+                                                    "endTime": "16:10"
+                                                }
+                                            ],
+                                            "color": "#007174"
+                                        } // End of Section MCB
+                                        ,
+                                        { // Start of Section MMS
+                                            "code": "MMS",
+                                            "teacher": "Scott Waites (3.3)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Monday",
+                                                    "startTime": "15:20",
+                                                    "endTime": "17:05"
+                                                }
+                                            ],
+                                            "color": "#2c4c3b"
+                                        } // End of Section MMS
+                                        ,
+                                        { // Start of Section MMT
+                                            "code": "MMT",
+                                            "teacher": "Charles Mitchell (4.1)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "11:40",
+                                                    "endTime": "13:25"
+                                                }
+                                            ],
+                                            "color": "#306844"
+                                        } // End of Section MMT
+                                        ,
+                                        { // Start of Section MMU
+                                            "code": "MMU",
+                                            "teacher": "Charles Mitchell (4.1)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Wednesday",
+                                                    "startTime": "09:50",
+                                                    "endTime": "11:35"
+                                                }
+                                            ],
+                                            "color": "#182c25"
+                                        } // End of Section MMU
+                                        ,
+                                        { // Start of Section MMV
+                                            "code": "MMV",
+                                            "teacher": "Donna Geary (4.4)",
+                                            "classList": 
+                                            [
+                                                {
+                                                    "dayOfWeek": "Tuesday",
+                                                    "startTime": "15:20",
+                                                    "endTime": "17:05"
+                                                }
+                                            ],
+                                            "color": "#455b55"
+                                        } // End of Section MMV
                                     ], // End of Section List
                                     "note": "Required (1st term)"
                                 } // End of Course WEB222
