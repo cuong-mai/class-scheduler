@@ -1,13 +1,22 @@
+// Event handling functions
+// 
+
+// Show Welcome Dialog when app starts
+//
 function showWelcomeDialog() {
     gOverlay.show();
 }
 
+// Start the app
+//
 function startApp() {
     gWelcomeDialog.stopVideo();
     gWelcomeDialog.hide();
     gOverlay.hide();
 }
 
+// Load data
+//
 function loadData(institutionIndex_, programIndex_, termIndex_) {
     gCourseList = [];
     var currentTermData = data.institutionList[institutionIndex_].programList[programIndex_].termList[termIndex_];
@@ -18,28 +27,41 @@ function loadData(institutionIndex_, programIndex_, termIndex_) {
     }
 } 
 
+// Show tooltip asking for giving a comment
+//
 function showCommentTooltip() {
     $("#tooltip-comment").tooltip("show");   
 }
 
+
+// Hide tooltip asking for giving a comment
+//
 function hideCommentTooltip() {
     $("#tooltip-comment").tooltip("hide");   
 }
 
+// Toggle tooltip asking for giving a comment 
+//
 function toggleCommentTooltip() {
     showCommentTooltip();
     setTimeout(hideCommentTooltip, 5000);
 }
 
+// Permanently stop tooptip asking for comments 
+//
 function stopCommentToolTip() {
     clearInterval(gTooltipHandler);
 }
 
+// Show the Import Course Dialog
+//
 function showImportDialog() {
     gOverlay.show();
     gImportDialog.show();
 }
 
+// Set the program when user select from dropdown list
+//
 function setProgram() {
     var thisImportDialog = this;
     gCourseSelectedListTemp = [];
@@ -52,6 +74,8 @@ function setProgram() {
     thisImportDialog.setCourseList(gCourseList);
 }
 
+// Include/exclude a course from generated results
+//
 function toggleSelectCourse() {
     var objectPassed = this;
     var course = objectPassed.course;
@@ -63,6 +87,8 @@ function toggleSelectCourse() {
     }
 }
 
+// Import data when user clicks Import button on Import Course Dialog
+//
 function importData() {
     gCourseSelectedList = gCourseSelectedListTemp;
     gCourseContainer.clear();
@@ -84,16 +110,23 @@ function importData() {
     gOverlay.hide();
 }
 
+// Cancel importing when user clicks Cancel button on Import Course Dialog
+//
 function cancelImport() {
     var thisImportDialog = this;
     thisImportDialog.hide();
     gOverlay.hide();
 }
 
+// Toggle collase icon of Import Course Dialog when user clicks
+//
 function toggleCollapseIcon() {
     $(this).toggleClass("glyphicon-chevron-right glyphicon-chevron-down");
 }
 
+// Include/Exclude a section from generated results, 
+// when user clicks the section's display
+//
 function toggleEnableSection() {
     var clickedSection = this;
     var sectionInfo = clickedSection.courseCode + "-" + clickedSection.sectionData.code;
@@ -110,6 +143,9 @@ function toggleEnableSection() {
     }
 }
 
+// Include/exclude a day from generated results
+// when user clicks checkboxes for days
+//
 function toggleEnableDay() {
     var objectPassed = this;
     var $changedCheckbox = objectPassed.$checkbox;
@@ -134,8 +170,10 @@ function toggleEnableDay() {
     }
 }
 
+// Generate all possible combinations of schedules
+// when user clicks Generate button
+//
 function generateSchedules() {
-//    gRightPanel.hideSchedulePage(gSchedulePageOverview);
     gSchedulePageResult = new SchedulePage("result", gSectionClosedInfoList, gDayDisabledList);
 
     $(".row-message-loading").fadeIn(200, function () {
@@ -158,6 +196,9 @@ function generateSchedules() {
     });
 }
 
+// Navigate between schedule pages
+// when users click arrow navigation buttons
+//
 function navigateSchedule(direction_) {
     if (direction_ == "back") {
         for (var i = 0; i < gScheduleResultList.length; i++) {

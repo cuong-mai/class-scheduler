@@ -1,3 +1,5 @@
+// Data import from institutions' course enrollment systems
+//
 var data = 
 {
     "updated": "2017-08-20 @ 6:30pm",

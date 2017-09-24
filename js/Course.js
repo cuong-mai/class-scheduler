@@ -1,4 +1,8 @@
+// Course
+//
 class Course {
+    // Constructor
+    //
     constructor(courseData_) {
         this.courseData = courseData_;
         this.scheduleType = "";
@@ -58,6 +62,8 @@ class Course {
         }
     }
     
+    // Append a section to is data and display
+    //
     appendSection(newSection_) {
         newSection_.scheduleType = this.scheduleType;
         this.sectionList.push(newSection_);

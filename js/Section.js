@@ -1,4 +1,8 @@
+// Section
+//
 class Section {
+    // Constructor
+    //
     constructor(courseCode_, sectionData_) {
         this.courseCode = courseCode_;
         this.sectionData = sectionData_;
@@ -75,6 +79,8 @@ class Section {
         }
     }
     
+    // Append a class
+    //
     appendClass(newClass_) {
         newClass_.scheduleType = this.scheduleType;
         this.classList.push(newClass_);
@@ -103,6 +109,8 @@ class Section {
         });
     }
     
+    // Include in generated results
+    //
     open() {
         this.isOpen = true;
         if (this.isOpen && this.isEnable) {
@@ -116,6 +124,8 @@ class Section {
         }
     }
 
+    // Exclude in generated results
+    //
     close() {
         this.isOpen = false;
         this.$viewElement.children().css({

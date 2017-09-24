@@ -1,4 +1,7 @@
+// Main
+
 // Global Variables
+//
 var gDayDisabledList = [];
 var gSectionClosedInfoList = [];
 
@@ -20,11 +23,15 @@ var gCourseSelectedList = [];
 var gCourseSelectedListTemp = [];
 var gSectionCombList = new Array();
 
+// Main - when document ready
+//
 $(document).ready(function () {
     init();
     assignEvents();
 });
 
+// Initialize elements and data
+//
 function init() {
     
     $("#tooltip-comment").tooltip();   
@@ -56,6 +63,8 @@ function init() {
     gImportDialog.setCourseList(gCourseList);
 }
 
+// Assign event handlers
+//
 function assignEvents() {
     $(".button-comment").bind("click", stopCommentToolTip);
     $(".accordion-toggle").click(toggleCollapseIcon);

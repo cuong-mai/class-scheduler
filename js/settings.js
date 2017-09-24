@@ -1,3 +1,6 @@
+// Variables and functions for settings and controls
+//
+
 // Day, Time
 var DAYS_OF_WEEK = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 var NUM_DAYS_PER_WEEK = DAYS_OF_WEEK.length;
@@ -27,6 +30,7 @@ var ENABLE_BY_CLICK = true;
 var ENABLE_NOT_BY_CLICK = false;
 
 // Unique Properties of Schedule Overview (0) /Result (1)
+//
 function scheduleProperty(scheduleType_) {
     var TYPE;
     var HOUR_STEP;
@@ -78,13 +82,14 @@ function scheduleProperty(scheduleType_) {
 var $tableScheduleElemList = [$("#table-schedule-overview"), $("#table-schedule-overview")]
 //var $tableScheduleOverviewElem = $("#table-schedule-overview");
 
-// Functions
-// Day to Index
+// Return index of a day in DAYS_OF_WEEK 
+// 
 function dayToIndex(day_) {
     return DAYS_OF_WEEK.indexOf(day_);
 }
 
 // Split time to hour and min
+// 
 function splitTime(time_) {
     var hour = Number(time_.split(":")[0]);
     var min = Number(time_.split(":")[1]);
@@ -92,6 +97,7 @@ function splitTime(time_) {
 }
 
 // Number of Table Schedule Rows from MIN_TIME, MAX_TIME
+//
 function numTableScheduleRows(startTime_, endTime_, hourStep_) {
     var startHour = splitTime(startTime_).hour;
     var endHour = splitTime(endTime_).hour;
@@ -99,12 +105,15 @@ function numTableScheduleRows(startTime_, endTime_, hourStep_) {
 }
 
 // Convert Time string to number (of minutes)
+//
 function timeToNumber(time_) {
     var hour = splitTime(time_).hour;
     var min =  splitTime(time_).min;
     return (hour * 60 + min);
 }
 
+// Conver Time to position for displaying
+//
 function timeToPosition(classData_, zOrder_) {
     var top, left, height, width;
     var leftDay, widthDay;
@@ -123,6 +132,8 @@ function timeToPosition(classData_, zOrder_) {
     return {top, left, height, width};
 }
 
+// hour in 24 hour format to AM/PM
+//
 function hour24ToAP(hour_) {
     var hourAP;
     var ap;
@@ -137,6 +148,8 @@ function hour24ToAP(hour_) {
     return {hourAP, ap}
 }
 
+// Time in 24 hour format to AM.PM
+//
 function time24ToAP(time_) {
     var hourAP = hour24ToAP(splitTime(time_).hour).hourAP;
     var min = splitTime(time_).min;
@@ -144,6 +157,8 @@ function time24ToAP(time_) {
     return (hourAP + ":" + min + ap);
 }
 
+// Turn min time, max time to an array
+//
 function toTimeArray(minTime_, maxTime_) {
     var timeArray = [];
     var minHour = Number(minTime_.split(":")[0]);
@@ -156,6 +171,8 @@ function toTimeArray(minTime_, maxTime_) {
     return timeArray;
 }
 
+// Check if 2 classes are time overlapping
+//
 function isClassOverlapping(classA_, classB_) {
     var overlap;
     if (classA_ == undefined || classB_ == undefined) {
@@ -174,6 +191,8 @@ function isClassOverlapping(classA_, classB_) {
     return overlap;
 }
 
+// Check if 2 sections are time overlapping
+//
 function isSectionOverlapping(sectionA_, sectionB_) {
     var overlap;
     if (sectionA_ == undefined || sectionB_ == undefined) {
@@ -196,6 +215,8 @@ function isSectionOverlapping(sectionA_, sectionB_) {
     return overlap;
 }
 
+// Check if 2 list of sections are time overlapping
+//
 function isSectionListOverlapping(sectionListA_, sectionB_) {
     var overlap = false;
     if (sectionListA_ == undefined || sectionB_ == undefined) {
@@ -211,17 +232,23 @@ function isSectionListOverlapping(sectionListA_, sectionB_) {
     return overlap;
 }
 
+// Add an item to end of an array
+//
 function appendToNewArray(array_, newItem) {
     var tmpArray = array_.slice(0);
     tmpArray.push(newItem);
     return tmpArray;
 }
 
+// Deep copy (copy by values, not reference) a section
+//
 function deepCopySection(section_) {
     var sectionTmp = new Section(section_.courseCode, section_.sectionData);
     return sectionTmp;
 }
 
+// Deep copy (copy by values, not reference) a list of section
+//
 function deepCopySectionList(sectionList_) {
     var sectionListTmp = new Array();
     for (var i = 0; i < sectionList_.length; i++) {
@@ -231,6 +258,8 @@ function deepCopySectionList(sectionList_) {
     return sectionListTmp;
 }
 
+// Return the parent course of a section
+//
 function parentCourse(courseList_, section_) {
     var courseIndexFound = -1;
     var result = null;
@@ -254,6 +283,8 @@ function parentCourse(courseList_, section_) {
     return result;
 }
 
+// Count number of sections are included in generated results
+//
 function countSectionEnable(sectionList_) {
     var sectionCount = sectionList_.length;
     var count = 0;
@@ -265,6 +296,8 @@ function countSectionEnable(sectionList_) {
     return count;
 }
 
+// Return the parent section of a class
+//
 function parentSection(courseList_, class_) {
     var sectionIndexFound = -1;
     var result = null;
@@ -291,6 +324,8 @@ function parentSection(courseList_, class_) {
     return result;
 }
 
+// Combine all possible sections without time conflicts
+//
 function combineSections(courseList_) {
     var sectionCombList = new Array();
 
@@ -326,7 +361,7 @@ function combineSections(courseList_) {
             }
         }
     }
-
+    
     var validSectionCombList = new Array();
     for (var i = 0; i < sectionCombList.length; i++) {
         if (sectionCombList[i].length == courseCount) {

@@ -1,4 +1,8 @@
+// Right panel - contains schedules
+//
 class RightPanel {
+    // Constructor
+    //
     constructor() {
         this.$viewElement = $("#right-panel");
         
@@ -16,6 +20,8 @@ class RightPanel {
         this.currentSchedulePageIndex = -1;
     }
     
+    // Append a schedule page
+    //
     appendSchedulePage(schedulePage_) {
         if (this.currentSchedulePageIndex >=0) {
             this.hideSchedulePage(this.schedulePageList[this.currentSchedulePageIndex]);
@@ -33,16 +39,22 @@ class RightPanel {
         find(".label-schedule-page-number").text("Page " + (this.currentSchedulePageIndex + 1) + "/" + this.schedulePageList.length);
     }
     
+    // Hide a shedule page
+    //
     hideSchedulePage(schedulePage_) {
         this.$viewElement.find(schedulePage_.$infoElement).hide();
         this.$viewElement.find(schedulePage_.$viewElement).fadeOut(200);
     }
     
+    // Show a schedule page
+    //
     showSchedulePage(schedulePage_) {
         this.$viewElement.find(schedulePage_.$infoElement).show();
         this.$viewElement.find(schedulePage_.$viewElement).fadeIn(200);
     }
     
+    // Navigate to a schedule page
+    //
     navigateSchedulePage(pageCount_) {
         if ((pageCount_ > 0 && this.currentSchedulePageIndex < this.schedulePageList.length - 1) ||
             ((pageCount_ < 0 && this.currentSchedulePageIndex > 0))) {
@@ -65,22 +77,4 @@ class RightPanel {
             }
         }
     }
-    
-//    appendMessage(message_) {
-//        if (this.currentSchedulePageIndex >=0) {
-//            this.hideSchedulePage(this.schedulePageList[this.currentSchedulePageIndex]);
-//            this.$viewElement.find(".button-navigation-schedule-back").prop("src", "images/button_schedule_back_enabled.png");
-//            this.$viewElement.find(".button-navigation-schedule-forward").prop("src", "images/button_schedule_forward_disabled.png");
-//        }
-//        
-//        this.$viewElement.children().first().children().first().children().first().append(schedulePage_.$infoElement);
-//        this.$viewElement.children().first().append(schedulePage_.$viewElement);
-//        
-//        this.schedulePageList.push(schedulePage_);
-//        this.currentSchedulePageIndex = this.schedulePageList.length - 1;
-//        
-//        this.$viewElement.children().first().children().first().children().first().
-//        find(".label-schedule-page-number").text("Page " + (this.currentSchedulePageIndex + 1) + "/" + this.schedulePageList.length);
-//        
-//    }
 }

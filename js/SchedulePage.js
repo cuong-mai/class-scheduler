@@ -1,4 +1,8 @@
+// Schedule Page
+//
 class SchedulePage {
+    // Constructor
+    //
     constructor(schedulePageType_, sectionClosedInfoList_, dayDisabledList_) {
         this.schedulePageType = schedulePageType_;
         
@@ -28,6 +32,8 @@ class SchedulePage {
         ));
     }
     
+    // Append a schedule
+    //
     appendSchedule(schedule_) {
         this.$viewElement.children().first().append(schedule_.$viewElement);
     }

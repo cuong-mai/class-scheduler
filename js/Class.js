@@ -1,4 +1,8 @@
+// Class
+//
 class Class {
+    // Constructor
+    //
     constructor(courseCode_, sectionCode_, teacher_, color_, classData_,zOrder_) {
         this.courseCode = courseCode_;
         this.sectionCode = sectionCode_;
@@ -80,6 +84,8 @@ class Class {
         ));
     }
     
+    // Update the display
+    //
     updateView() {
         var position = timeToPosition(this.classData, this.zOrder);
         this.$viewElement.css({
@@ -95,6 +101,8 @@ class Class {
         });
     }
     
+    // Included in generated results
+    //
     open() {
         this.$viewElement.find(".label-class-status").text("On");
         this.$viewElement.find(".sign-class-status").css({
@@ -102,6 +110,8 @@ class Class {
         });
     }
 
+    // Excluded in generated results 
+    //
     close() {
         this.$viewElement.find(".label-class-status").text("Off");
         this.$viewElement.find(".sign-class-status").css({

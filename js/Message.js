@@ -1,4 +1,8 @@
+// Message - displayed when/after generating schedules
+//
 class Message {
+    // Constructor
+    //
     constructor(imageType_, text_) {
         switch (imageType_) {
             case "noresult":

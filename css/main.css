@@ -1,3 +1,5 @@
+/* Main style sheet */
+
 /*Page*/
 body {
     overflow: hidden;
@@ -326,16 +328,8 @@ a:hover {
     border: none;
     padding-left: 8px;
     padding-right: 8px;
-/*    padding-top: 1px;*/
     padding-bottom: 1px;
     text-align: left;
-}
-
-.table-import input[type="checkbox"] {
-/*
-    height: 16px;
-    width: 16px;
-*/
 }
 
 .td-import-section {
@@ -367,10 +361,6 @@ a:hover {
 .row-of-left-panel {
     margin-top: 0px;
     margin-bottom: 0px;
-}
-
-.row-course-heading {
-/*    margin-top: 16px;*/
 }
 
 .row-button-left-panel {
@@ -649,10 +639,6 @@ td {
     border-radius: 0px;
 }
 
-.section:hover {
-/*    filter: brightness(120%);*/
-}
-
 .section:hover * {
     cursor: pointer;
 }
@@ -695,7 +681,6 @@ td {
 
 /* Message */
 .row-message {
-/*    display: none;*/
     z-index: 99;
     position: absolute;
     top: 48px;
@@ -727,7 +712,6 @@ td {
     color: grey;
     font-size: 11pt;
 }
-
 
 .spinner {
     display: block;

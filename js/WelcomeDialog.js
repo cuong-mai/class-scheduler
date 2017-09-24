@@ -1,19 +1,29 @@
+// Welcome Dialog start screen
+//
 class WelcomeDialog {
+    // Constructor
+    //
     constructor() {
         this.$viewElement = $(".row-welcome-dialog");
         this.$viewElement.find(".button-start").unbind();
         this.$viewElement.find(".button-start").bind("click", startApp);
         this.adjustVideoSize();
     }
-
+    
+    // Show the Dialog
+    //
     show() {
         this.$viewElement.slideDown(400);
     }
-
+    
+    // Hide the Dialog
+    //
     hide() {
         this.$viewElement.slideUp(300);
     }
     
+    // Adjust YouTube video ifram responsively
+    //
     adjustVideoSize() {
         var $rowWelcomeVideo = $(".row-welcome-video");
         var $welcomeVideoContainer = $(".welcome-video-container");
@@ -43,6 +53,8 @@ class WelcomeDialog {
         });
     }
     
+    // Stop playing the video
+    //
     stopVideo() {
         this.$viewElement.find("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
     }

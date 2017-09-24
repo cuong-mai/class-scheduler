@@ -1,4 +1,8 @@
+// Import Course Dialog
+//
 class ImportDialog {
+    // Constructor
+    //
     constructor(data_) {
         this.data = data_;
         this.courseList = [];
@@ -32,6 +36,8 @@ class ImportDialog {
         });
     }
     
+    // Load Instition list from data
+    //
     loadInstitution(data_) {
         for (var i = 0; i < data_.institutionList.length; i++) {
             var $newOptionElement = $($.parseHTML(
@@ -40,7 +46,9 @@ class ImportDialog {
             this.$dialogElement.find(".select-institution").append($newOptionElement);
         }
     }
-    
+
+    // Load Program list from data
+    //
     loadProgram(institutionData_) {
         this.$dialogElement.find(".select-program").empty();
         for (var i = 0; i < institutionData_.programList.length; i++) {
@@ -51,6 +59,8 @@ class ImportDialog {
         }
     }
     
+    // Load Term list from data
+    //
     loadTerm(programData_) {
         this.$dialogElement.find(".select-term").empty();
         for (var i = 0; i < programData_.termList.length; i++) {
@@ -60,12 +70,16 @@ class ImportDialog {
             this.$dialogElement.find(".select-term").append($newOptionElement);
         }
     }
-
+    
+    // Append a course to course list
+    //
     appendCourse(course_) {
         this.courseList.push(course_);
         this.$courseContainerElement.find("tbody").append(course_.$importElement);
     }
     
+    // Set course list
+    //
     setCourseList(courseList_) {
         this.clear();
         for (var i = 0; i < courseList_.length; i++) {
@@ -73,15 +87,21 @@ class ImportDialog {
         }
     }
     
+    // Clear course list
+    //
     clear() {
         this.courseList = [];
         this.$courseContainerElement.find("tbody").empty();
     }
     
+    // Show the Dialog
+    //
     show() {
         this.$dialogElement.slideDown(400);
     }
     
+    // Hide the Dialog
+    //
     hide() {
         this.$dialogElement.slideUp(300);
     }

@@ -1,12 +1,16 @@
-// Schedule class
-
+// Schedule - Overview or generated results
+//
 class Schedule {
+    // Constructor
+    //
     constructor(scheduleType_, dayDisabledList_) {
         this.scheduleType = scheduleType_;
         this.daysDisableList = dayDisabledList_;
         this.init();
     }
     
+    // Initialize data and view
+    //
     init() {
         this.courseList = [];
         this.sectionList = [];
@@ -83,14 +87,16 @@ class Schedule {
             }
             $tableScheduleElem.append($rowElem);
         }
-
+        
         // Append Element to parent
         this.$viewElement = $viewElement;
-
+        
         // Update View
         this.updateView();
     }
     
+    // Update display
+    //
     updateView() {
         // Column Schedule Number and Column Button View
         if (this.scheduleType == SCHEDULE_OVERVIEW_TYPE) {
@@ -163,6 +169,8 @@ class Schedule {
         });
     }
     
+    // Append a course
+    //
     appendCourse(newCourse_) {
         this.courseList.push(newCourse_);
         for (var i = 0; i < newCourse_.sectionList.length; i++) {
@@ -180,6 +188,8 @@ class Schedule {
         this.$viewElement.find(".display-schedule").append(newCourse_.$viewElement);
     }
     
+    // Append a section
+    //
     appendSection(newSection_) {
         newSection_.scheduleType = this.scheduleType;
         this.sectionList.push(newSection_);
@@ -194,6 +204,8 @@ class Schedule {
         this.$viewElement.find(".display-schedule").append(newSection_.$viewElement);
     }
     
+    // Insert a class into class list in ascending order of starting time
+    //
     insertToClassList(classList_, class_) {
         var startTime = class_.classData.startTime;
         var endTime = class_.classData.endTime;
@@ -216,6 +228,8 @@ class Schedule {
         }
     }
     
+    // Arrange the displays of all class without overlapping
+    //
     arrangeClassListView(classList_) {
         var classListLen = classList_.length;
         var subColumnList = new Array();
@@ -262,6 +276,8 @@ class Schedule {
         }
     }
     
+    // Clear all courses
+    //
     clear() {
         for (var i = 0; i < this.courseList.length; i++) {
             var currentCourse = this.courseList[i];

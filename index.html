@@ -20,11 +20,11 @@
                                     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
             ga('create', 'UA-103778492-1', 'auto');
             ga('send', 'pageview');
-        </script>
+        </script> <!-- End of Google Analytics -->
     </head>
     
     <body>
-        <!-- Facebook SDK for JavaScript -->
+        <!-- Facebook SDK -->
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
                 var js, fjs = d.getElementsByTagName(s)[0];
@@ -33,7 +33,7 @@
                 js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-        </script>        
+        </script> <!-- End of Facebook SDK -->        
         
         <!-- Container -->
         <div class="container-fluid">
@@ -44,11 +44,14 @@
             <!-- Row Import Dialog -->
             <div class="row row-import-dialog">
                 <div class="col-sm-12 col-import-dialog">
+                    <!-- Import Dialog Header -->
                     <div class="row row-import-header">
                         <div class="col-sm-12">
                             <label class="import-header-title">Select courses you want to enroll</label>
                         </div>
-                    </div>    
+                    </div> <!-- End of Import Dialog Header -->
+                    
+                       <!-- Import Dialog Info -->   
                     <div class="row row-import-content row-import-info">
                         <div class="col-sm-12">
                             <img class="icon-import-notice" src="images/icon_notice.png">
@@ -63,7 +66,9 @@
                                 The numbers beside the teachers' names are ratings from ratemyprofessors.com, used as reference only.
                             </p>
                         </div>
-                    </div>
+                    </div> <!-- End of Import Dialog Info -->
+                    
+                    <!-- Import Dialog Content -->   
                     <div class="row row-import-content">
                         <div class="col-sm-6">
                             <div class="row">
@@ -72,7 +77,6 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <select class="select-import select-institution">
-<!--                                        <option>Seneca College</option>-->
                                     </select>
                                 </div>
                             </div>
@@ -82,7 +86,6 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <select class="select-import select-program">
-<!--                                        <option>CPA/CPD</option>-->
                                     </select>
                                 </div>
                             </div>
@@ -94,7 +97,6 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <select class="select-import select-term">
-<!--                                        <option>Fall 2017</option>-->
                                     </select>
                                 </div>
                             </div>
@@ -109,12 +111,16 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> <!-- End of Import Dialog Content -->
+                    
+                    <!-- Import Dialog Course Container Header -->
                     <div class="row row-import-content row-import-info">
                         <div class="col-sm-12">
                             <label class="label-import-updated">Courses:</label>
                         </div>
-                    </div>
+                    </div> <!-- End of Import Dialog Course Container Header -->
+                    
+                    <!-- Import Dialog Course Container -->
                     <div class="row row-import-content row-import-course-container">
                         <div class="col-sm-12">
                             <table class="table-import">
@@ -124,7 +130,9 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div> 
+                    </div> <!-- Endof Import Dialog Course Container -->
+                    
+                    <!-- Import Dialog Buttons -->
                     <div class="row row-button-import-dialog">
                         <div class="col-sm-3">
                         </div>   
@@ -137,7 +145,7 @@
                         <div class="col-sm-3">
                         </div>   
                     </div>   
-                </div>
+                </div> <!-- End of Import Dialog Buttons -->
             </div> <!-- End of Row Import Dialog -->             
             
             <!-- Row Welcome Dialog -->
@@ -289,7 +297,7 @@
                 <div class="col-sm-12">
                     <div class="">
                         <a href="http://www.cuongmai.net" class="" target="_blank">
-                            <span>&copy; Cuong (James) Mai</span>
+                            <span>Cuong Mai</span>
                         </a>
                         <img class="footer-icon footer-divisor" src="images/icon_footer_divisor.png">
                         <a href="https://github.com/cuong-mai" target="_blank">

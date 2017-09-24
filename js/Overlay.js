@@ -1,3 +1,5 @@
+// Overlay - dark transparent - to hide backround when Dialogs show
+//
 class Overlay {
     constructor() {
         this.$viewElement = $(".overlay");
