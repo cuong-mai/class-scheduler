@@ -698,8 +698,8 @@ td {
     position: absolute;
     top: 40%;
     left: 40%;
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     text-align: center;
 }
 
@@ -715,9 +715,9 @@ td {
 
 .spinner {
     display: block;
-    left: 25%;
-    width: 50%;
-    height: 50%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
     border-radius: 50%;
     position: relative;
 }
